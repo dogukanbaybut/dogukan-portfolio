@@ -78,21 +78,23 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
         </div>
       </div>
 
-      <div className="relative overflow-hidden lg:col-span-8">
-        <motion.div
-          style={{ scale }}
-          className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-border bg-bg-elevated bg-grid"
-        >
+      <div className="lg:col-span-8">
+        <div className="lg:sticky lg:top-28">
           <motion.div
-            style={{ y: imageY }}
-            className="absolute inset-0 flex items-center justify-center"
+            style={{ scale }}
+            className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-border bg-bg-elevated bg-grid"
           >
-            <span className="font-display text-outline text-[18vw] font-medium leading-none tracking-tighter sm:text-[10rem]">
-              {order}
-            </span>
+            <motion.div
+              style={{ y: imageY }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <span className="font-display text-outline text-[18vw] font-medium leading-none tracking-tighter sm:text-[10rem]">
+                {order}
+              </span>
+            </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent" />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent" />
-        </motion.div>
+        </div>
       </div>
     </div>
   )

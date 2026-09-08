@@ -1,4 +1,6 @@
 import { CustomCursor } from './components/ui/CustomCursor'
+import { Preloader } from './components/ui/Preloader'
+import { ScrollProgress } from './components/ui/ScrollProgress'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
@@ -13,6 +15,8 @@ import { Footer } from './components/Footer'
 function App() {
   return (
     <div className="relative min-h-screen bg-bg bg-noise text-ink">
+      <Preloader />
+      <ScrollProgress />
       <CustomCursor />
       <Navbar />
       <main>
