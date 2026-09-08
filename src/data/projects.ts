@@ -27,19 +27,4 @@ export const projects: Project[] = [
       'Dark mode support and modular state management via Context API for a refined user experience',
     ],
   },
-  {
-    name: 'LinguaBox',
-    category: 'EdTech / Flutter / AI',
-    description:
-      'A Flutter mobile app for English vocabulary learning and YDS exam preparation, using Google Gemini AI to generate dynamic tests, reading passages and sentence-completion exercises.',
-    technologies: ['Flutter', 'Gemini AI', 'Firebase', 'Provider'],
-    size: 'large',
-    githubUrl: undefined,
-    liveUrl: undefined,
-    highlights: [
-      'Google Gemini AI integration to generate dynamic tests, reading texts and sentence-completion exercises',
-      'Local data persistence with Firebase and app-wide state management with Provider',
-      'Responsive UI with dark mode support and interactive test systems',
-    ],
-  },
 ]

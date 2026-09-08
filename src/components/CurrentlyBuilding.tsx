@@ -5,8 +5,8 @@ import { fadeUp } from './ui/motionVariants'
 
 const focuses = [
   'React Native Ecosystem',
-  'Cross-Platform Mobile (Flutter)',
   'Firebase & Realtime Architectures',
+  'Native Modules & Performance',
   'Modern Mobile UX',
 ]
 
@@ -24,8 +24,8 @@ export function CurrentlyBuilding() {
           variants={fadeUp}
           className="mt-6 max-w-3xl text-balance font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-5xl"
         >
-          Deepening my React Native expertise, exploring Flutter and Firebase-backed
-          architectures for scalable mobile products.
+          Deepening my React Native expertise and exploring Firebase-backed architectures for
+          scalable mobile products.
         </motion.h2>
 
         <motion.div

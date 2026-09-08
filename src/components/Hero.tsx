@@ -4,7 +4,7 @@ import { ArrowDown } from 'lucide-react'
 import { Container } from './ui/Container'
 import { AnimatedButton } from './ui/AnimatedButton'
 
-const focusWords = ['React Native', 'Flutter', 'Firebase', 'TypeScript']
+const focusWords = ['React Native', 'React.js', 'Firebase', 'TypeScript']
 
 function CyclingFocus() {
   const [index, setIndex] = useState(0)
