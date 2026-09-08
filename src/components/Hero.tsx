@@ -89,7 +89,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="block pl-6 text-outline-accent sm:pl-10 lg:pl-16"
             >
-              Mobile
+              React
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
