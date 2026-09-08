@@ -1,5 +1,4 @@
 import { motion } from 'motion/react'
-import { Briefcase } from 'lucide-react'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
@@ -10,30 +9,30 @@ export function Experience() {
   return (
     <MotionSection id="experience">
       <Container>
-        <SectionHeading eyebrow="Experience" title="Where I've worked" />
+        <SectionHeading index="04" eyebrow="Experience" title="Where I've worked" />
 
-        <div className="relative mt-14 max-w-2xl">
-          <div className="absolute left-[15px] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
-
-          <div className="space-y-10">
-            {experience.map((item) => (
-              <motion.div key={item.company} variants={fadeUp} className="relative pl-12">
-                <span className="absolute left-0 top-1 flex size-8 items-center justify-center rounded-full border border-border bg-bg-elevated">
-                  <Briefcase className="size-3.5 text-accent" />
-                </span>
-
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h3 className="text-base font-semibold text-ink">{item.company}</h3>
-                  <span className="font-mono text-xs text-ink-faint">{item.period}</span>
-                </div>
-                <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <p className="text-sm text-accent">{item.role}</p>
-                  <span className="text-xs text-ink-faint">{item.location}</span>
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="mt-16 border-t border-border">
+          {experience.map((item) => (
+            <motion.div
+              key={item.company}
+              variants={fadeUp}
+              className="group grid grid-cols-1 gap-2 border-b border-border py-7 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-6"
+            >
+              <span className="font-mono text-xs text-ink-faint">{item.period}</span>
+              <div>
+                <h3 className="font-display text-xl font-medium text-ink transition-colors duration-300 group-hover:text-accent sm:text-2xl">
+                  {item.company}
+                </h3>
+                <p className="mt-1 text-sm text-ink-muted">{item.role}</p>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">
+                  {item.description}
+                </p>
+              </div>
+              <span className="font-mono text-xs text-ink-faint sm:text-right">
+                {item.location}
+              </span>
+            </motion.div>
+          ))}
         </div>
       </Container>
     </MotionSection>

@@ -1,48 +1,44 @@
 import { motion } from 'motion/react'
-import { Component, Flame, Smartphone, Sparkles } from 'lucide-react'
 import { Container } from './ui/Container'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
 
 const focuses = [
-  { label: 'React Native Ecosystem', icon: Component },
-  { label: 'Cross-Platform Mobile (Flutter)', icon: Smartphone },
-  { label: 'Firebase & Realtime Architectures', icon: Flame },
-  { label: 'Modern Mobile UX', icon: Sparkles },
+  'React Native Ecosystem',
+  'Cross-Platform Mobile (Flutter)',
+  'Firebase & Realtime Architectures',
+  'Modern Mobile UX',
 ]
 
 export function CurrentlyBuilding() {
   return (
     <MotionSection id="focus">
       <Container>
-        <div className="rounded-3xl border border-border bg-bg-elevated bg-grid p-8 sm:p-12">
-          <motion.p
-            variants={fadeUp}
-            className="font-mono text-xs uppercase tracking-[0.2em] text-accent"
-          >
-            Currently Building
-          </motion.p>
-          <motion.h2
-            variants={fadeUp}
-            className="mt-4 max-w-xl text-balance text-2xl font-semibold tracking-tight text-ink sm:text-3xl"
-          >
-            Deepening my React Native expertise while exploring Flutter and Firebase-backed
-            architectures for scalable mobile products.
-          </motion.h2>
+        <motion.p
+          variants={fadeUp}
+          className="font-mono text-xs uppercase tracking-[0.22em] text-accent"
+        >
+          06 — Currently Building
+        </motion.p>
+        <motion.h2
+          variants={fadeUp}
+          className="mt-6 max-w-3xl text-balance font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-5xl"
+        >
+          Deepening my React Native expertise, exploring Flutter and Firebase-backed
+          architectures for scalable mobile products.
+        </motion.h2>
 
-          <div className="mt-10 flex flex-wrap gap-3">
-            {focuses.map((focus) => (
-              <motion.div
-                key={focus.label}
-                variants={fadeUp}
-                className="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2"
-              >
-                <focus.icon className="size-4 text-accent" strokeWidth={1.5} />
-                <span className="text-sm text-ink-muted">{focus.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <motion.div
+          variants={fadeUp}
+          className="mt-10 flex flex-wrap gap-x-8 gap-y-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted"
+        >
+          {focuses.map((focus, i) => (
+            <span key={focus} className="inline-flex items-center gap-2">
+              {i > 0 && <span className="text-accent">/</span>}
+              {focus}
+            </span>
+          ))}
+        </motion.div>
       </Container>
     </MotionSection>
   )

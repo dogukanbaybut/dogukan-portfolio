@@ -16,45 +16,53 @@ const contactLinks = [
 export function Contact() {
   return (
     <MotionSection id="contact">
-      <Container className="text-center">
+      <Container>
         <motion.p
           variants={fadeUp}
-          className="font-mono text-xs uppercase tracking-[0.2em] text-accent"
+          className="font-mono text-xs uppercase tracking-[0.22em] text-accent"
         >
-          Contact
+          07 — Contact
         </motion.p>
         <motion.h2
           variants={fadeUp}
-          className="mx-auto mt-4 max-w-2xl text-balance text-3xl font-semibold tracking-tight text-ink sm:text-5xl"
+          className="mt-6 text-balance font-display text-[13vw] font-medium uppercase leading-[0.9] tracking-tighter text-ink sm:text-[8rem] lg:text-[9rem]"
         >
-          Let&apos;s build something.
+          Let&apos;s build.
         </motion.h2>
-        <motion.p variants={fadeUp} className="mx-auto mt-5 max-w-md text-base text-ink-muted">
-          Have an idea, project or opportunity? Let&apos;s talk.
-        </motion.p>
-
-        <motion.div variants={fadeUp} className="mt-10 flex justify-center">
-          <AnimatedButton href="mailto:dogukan.baybut@gmail.com" icon={<Mail className="size-4" />}>
-            Say hello
-          </AnimatedButton>
-        </motion.div>
 
         <motion.div
           variants={fadeUp}
-          className="mx-auto mt-14 flex max-w-lg flex-wrap items-center justify-center gap-4"
+          className="mt-12 flex flex-col gap-10 border-t border-border pt-10 lg:flex-row lg:items-end lg:justify-between"
         >
-          {contactLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm text-ink-muted transition-colors hover:border-accent/60 hover:text-ink"
+          <p className="max-w-sm text-base leading-relaxed text-ink-muted">
+            Have an idea, project or opportunity? Let&apos;s talk.
+          </p>
+
+          <div className="flex flex-col items-start gap-6 lg:items-end">
+            <AnimatedButton
+              href="mailto:dogukan.baybut@gmail.com"
+              icon={<Mail className="size-4" />}
+              cursorLabel="Email"
             >
-              <link.icon className="size-4" />
-              {link.label}
-            </a>
-          ))}
+              Say hello
+            </AnimatedButton>
+
+            <div className="flex flex-wrap gap-6">
+              {contactLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+                  data-cursor="Open"
+                  className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-ink-muted transition-colors hover:text-ink"
+                >
+                  <link.icon className="size-3.5" />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </Container>
     </MotionSection>

@@ -1,3 +1,4 @@
+import { CustomCursor } from './components/ui/CustomCursor'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
@@ -12,6 +13,7 @@ import { Footer } from './components/Footer'
 function App() {
   return (
     <div className="relative min-h-screen bg-bg bg-noise text-ink">
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />

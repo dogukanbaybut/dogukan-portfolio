@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Container } from './ui/Container'
+import { Magnetic } from './ui/Magnetic'
 import { cn } from '../lib/utils'
 
 const links = [
@@ -24,84 +25,88 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <Container className="pt-4">
-        <div
-          className={cn(
-            'flex items-center justify-between rounded-2xl border px-4 py-3 backdrop-blur-xl transition-all duration-300',
-            scrolled
-              ? 'border-border bg-bg/80 shadow-[0_8px_30px_rgba(0,0,0,0.35)]'
-              : 'border-transparent bg-transparent',
-          )}
+    <header
+      className={cn(
+        'fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300',
+        scrolled ? 'border-border bg-bg/85 backdrop-blur-xl' : 'border-transparent bg-transparent',
+      )}
+    >
+      <Container className="flex items-center justify-between py-5">
+        <a
+          href="#top"
+          data-cursor="Top"
+          className="font-mono text-sm font-medium tracking-tight text-ink"
         >
-          <a href="#top" className="font-mono text-sm font-medium tracking-tight text-ink">
-            doğukan<span className="text-accent">.</span>baybut
-          </a>
+          doğukan<span className="text-accent">.</span>baybut
+        </a>
 
-          <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="group relative text-sm text-ink-muted transition-colors hover:text-ink"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
-          </nav>
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              data-cursor="Go"
+              className="group relative font-mono text-xs uppercase tracking-[0.12em] text-ink-muted transition-colors hover:text-ink"
+            >
+              {link.label}
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+            </a>
+          ))}
+        </nav>
 
+        <Magnetic className="hidden md:inline-block" strength={0.4}>
           <a
             href="#contact"
-            className="hidden rounded-full border border-border-strong px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-accent/60 hover:bg-accent-soft md:inline-flex"
+            data-cursor="Talk"
+            className="border-b border-ink-faint pb-0.5 font-mono text-xs uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent"
           >
             Let&apos;s Talk
           </a>
+        </Magnetic>
 
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="inline-flex items-center justify-center rounded-full border border-border p-2 text-ink md:hidden"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            aria-expanded={open}
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
-        </div>
-
-        <AnimatePresence>
-          {open && (
-            <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-2 overflow-hidden rounded-2xl border border-border bg-bg/95 backdrop-blur-xl md:hidden"
-              aria-label="Mobile"
-            >
-              <div className="flex flex-col gap-1 p-4">
-                {links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2.5 text-sm text-ink-muted transition-colors hover:bg-surface hover:text-ink"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-                <a
-                  href="#contact"
-                  onClick={() => setOpen(false)}
-                  className="mt-2 rounded-lg border border-border-strong px-3 py-2.5 text-center text-sm font-medium text-ink"
-                >
-                  Let&apos;s Talk
-                </a>
-              </div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="inline-flex items-center justify-center border border-border p-2 text-ink md:hidden"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
       </Container>
+
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden border-t border-border bg-bg/95 backdrop-blur-xl md:hidden"
+            aria-label="Mobile"
+          >
+            <Container className="flex flex-col gap-1 py-4">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="px-1 py-3 font-mono text-sm uppercase tracking-[0.1em] text-ink-muted transition-colors hover:text-ink"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="mt-2 border-t border-border px-1 py-3 font-mono text-sm uppercase tracking-[0.1em] text-ink"
+              >
+                Let&apos;s Talk
+              </a>
+            </Container>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

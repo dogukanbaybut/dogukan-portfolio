@@ -4,12 +4,14 @@ import { cn } from '../../lib/utils'
 import { fadeUp } from './motionVariants'
 
 export function SectionHeading({
+  index,
   eyebrow,
   title,
   description,
   align = 'left',
   className,
 }: {
+  index?: string
   eyebrow?: string
   title: ReactNode
   description?: ReactNode
@@ -17,29 +19,25 @@ export function SectionHeading({
   className?: string
 }) {
   return (
-    <div
-      className={cn(
-        'max-w-2xl',
-        align === 'center' && 'mx-auto text-center',
-        className,
-      )}
-    >
-      {eyebrow && (
-        <motion.p
-          variants={fadeUp}
-          className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-accent"
-        >
-          {eyebrow}
-        </motion.p>
-      )}
+    <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', className)}>
+      <motion.div
+        variants={fadeUp}
+        className={cn(
+          'mb-5 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-ink-faint',
+          align === 'center' && 'justify-center',
+        )}
+      >
+        {index && <span className="text-accent">{index}</span>}
+        {eyebrow && <span>{eyebrow}</span>}
+      </motion.div>
       <motion.h2
         variants={fadeUp}
-        className="text-balance text-3xl font-semibold tracking-tight text-ink sm:text-4xl"
+        className="text-balance font-display text-4xl font-medium leading-[1.05] tracking-tight text-ink sm:text-5xl"
       >
         {title}
       </motion.h2>
       {description && (
-        <motion.p variants={fadeUp} className="mt-4 text-base leading-relaxed text-ink-muted">
+        <motion.p variants={fadeUp} className="mt-5 max-w-lg text-base leading-relaxed text-ink-muted">
           {description}
         </motion.p>
       )}

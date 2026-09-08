@@ -1,29 +1,29 @@
-import { Cpu, Flame, Smartphone, Sparkles } from 'lucide-react'
+import { motion } from 'motion/react'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
-import { GlassCard } from './ui/GlassCard'
 import { MotionSection } from './ui/MotionSection'
+import { fadeUp } from './ui/motionVariants'
 
 const facets = [
   {
+    n: '01',
     title: 'Computer Engineering',
     description: 'A formal foundation in algorithms, systems and software design.',
-    icon: Cpu,
   },
   {
+    n: '02',
     title: 'React Native',
     description: 'Building cross-platform mobile apps with a native feel.',
-    icon: Smartphone,
   },
   {
+    n: '03',
     title: 'Firebase & Backend',
     description: 'Realtime data, auth and secure multi-tenant architectures.',
-    icon: Flame,
   },
   {
+    n: '04',
     title: 'Product Building',
     description: 'I care about the whole product, not just the code that ships it.',
-    icon: Sparkles,
   },
 ]
 
@@ -31,44 +31,48 @@ export function About() {
   return (
     <MotionSection id="about">
       <Container>
-        <SectionHeading eyebrow="About" title="Who I am" />
+        <SectionHeading index="01" eyebrow="Vision & Mission" title="Who I am" />
 
-        <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-4 md:grid-rows-2">
-          <GlassCard className="md:col-span-2 md:row-span-2">
-            <h3 className="text-xl font-semibold text-ink">About Me</h3>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-muted sm:text-base">
-              My vision is to become a skilled Mobile App Developer, specializing in React
-              Native to build user-focused, high-performance and scalable mobile
-              applications — while staying current with emerging technologies.
-            </p>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-ink-muted sm:text-base">
-              My mission is to continuously grow my knowledge and experience in the React
-              Native ecosystem to produce modern, reliable and maintainable mobile apps —
-              delivering real solutions for real users, and technical value to every project
-              I&apos;m part of.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {['React Native', 'Flutter', 'React.js', 'TypeScript', 'Firebase'].map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-border bg-bg-elevated px-3 py-1 font-mono text-xs text-ink-muted"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div className="mt-6 flex flex-wrap gap-4 text-xs text-ink-faint">
-              <span>Turkish — Native</span>
-              <span>English — B1</span>
-            </div>
-          </GlassCard>
+        <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <motion.p
+            variants={fadeUp}
+            className="text-balance font-display text-2xl font-medium leading-snug tracking-tight text-ink lg:col-span-7 lg:text-3xl"
+          >
+            My vision is to become a skilled Mobile App Developer, specializing in{' '}
+            <span className="text-accent">React Native</span> to build user-focused,
+            high-performance and scalable mobile applications — while staying current with
+            emerging technologies.
+          </motion.p>
 
+          <motion.div variants={fadeUp} className="lg:col-span-5">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">Mission</p>
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted sm:text-base">
+              To continuously grow my knowledge and experience in the React Native ecosystem to
+              produce modern, reliable and maintainable mobile apps — delivering real solutions
+              for real users, and technical value to every project I&apos;m part of.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink-faint">
+              <span>TR — Native</span>
+              <span>EN — B1</span>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="mt-20 border-t border-border">
           {facets.map((facet) => (
-            <GlassCard key={facet.title}>
-              <facet.icon className="size-5 text-accent" strokeWidth={1.5} />
-              <h3 className="mt-4 text-sm font-semibold text-ink">{facet.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{facet.description}</p>
-            </GlassCard>
+            <motion.div
+              key={facet.n}
+              variants={fadeUp}
+              className="group grid grid-cols-[3rem_1fr] items-baseline gap-6 border-b border-border py-6 sm:grid-cols-[3rem_14rem_1fr] sm:gap-10"
+            >
+              <span className="font-mono text-sm text-ink-faint">{facet.n}</span>
+              <h3 className="font-display text-lg font-medium text-ink transition-colors duration-300 group-hover:text-accent">
+                {facet.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-ink-muted sm:text-right">
+                {facet.description}
+              </p>
+            </motion.div>
           ))}
         </div>
       </Container>

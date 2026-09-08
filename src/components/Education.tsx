@@ -1,5 +1,4 @@
 import { motion } from 'motion/react'
-import { GraduationCap } from 'lucide-react'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
@@ -10,40 +9,39 @@ export function Education() {
   return (
     <MotionSection id="education">
       <Container>
-        <SectionHeading eyebrow="Education" title="Academic background" />
+        <SectionHeading index="05" eyebrow="Education" title="Academic background" />
 
-        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-16 border-t border-border">
           {education.map((item) => (
             <motion.div
               key={item.school}
               variants={fadeUp}
-              className="rounded-2xl border border-border bg-surface p-6 transition-colors duration-300 hover:border-border-strong"
+              className="group grid grid-cols-1 gap-2 border-b border-border py-7 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-6"
             >
-              <div className="flex items-start justify-between">
-                <GraduationCap className="size-5 text-accent" strokeWidth={1.5} />
-                {item.ongoing && (
-                  <span className="rounded-full border border-accent/30 bg-accent-soft px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-accent-strong">
-                    In progress
-                  </span>
+              <span className="font-mono text-xs text-ink-faint">{item.period}</span>
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-display text-xl font-medium text-ink transition-colors duration-300 group-hover:text-accent sm:text-2xl">
+                    {item.school}
+                  </h3>
+                  {item.ongoing && (
+                    <span className="rounded-full border border-accent/30 bg-accent-soft px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-accent">
+                      In progress
+                    </span>
+                  )}
+                </div>
+                <p className="mt-1 text-sm text-ink-muted">{item.degree}</p>
+                {item.details && (
+                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-ink-faint">
+                    {item.details.map((detail) => (
+                      <span key={detail}>{detail}</span>
+                    ))}
+                  </div>
                 )}
               </div>
-              <h3 className="mt-4 text-sm font-semibold text-ink">{item.school}</h3>
-              <p className="mt-1 text-sm text-ink-muted">{item.degree}</p>
-              <p className="mt-3 font-mono text-xs text-ink-faint">
-                {item.period} · {item.location}
-              </p>
-              {item.details && (
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {item.details.map((detail) => (
-                    <span
-                      key={detail}
-                      className="rounded-full border border-border bg-bg-elevated px-2.5 py-1 text-xs text-ink-muted"
-                    >
-                      {detail}
-                    </span>
-                  ))}
-                </div>
-              )}
+              <span className="font-mono text-xs text-ink-faint sm:text-right">
+                {item.location}
+              </span>
             </motion.div>
           ))}
         </div>
