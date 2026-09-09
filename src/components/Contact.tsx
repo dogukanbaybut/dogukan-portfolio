@@ -1,21 +1,26 @@
 import { motion } from 'motion/react'
-import { Mail } from 'lucide-react'
+import { ArrowUpRight, FileText } from 'lucide-react'
 import { Container } from './ui/Container'
 import { MotionSection } from './ui/MotionSection'
-import { AnimatedButton } from './ui/AnimatedButton'
+import { EmailCTA } from './ui/EmailCTA'
 import { GithubIcon, LinkedinIcon } from './ui/BrandIcons'
 import { fadeUp } from './ui/motionVariants'
 
-// NOTE: Replace with your real contact links.
-const contactLinks = [
-  { label: 'dogukan.baybut@gmail.com', href: 'mailto:dogukan.baybut@gmail.com', icon: Mail },
-  { label: 'github.com/[username]', href: 'https://github.com', icon: GithubIcon },
-  { label: 'linkedin.com/in/[username]', href: 'https://linkedin.com', icon: LinkedinIcon },
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/dogukanbaybut', icon: GithubIcon },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/do%C4%9Fukan-baybut-a47430229/',
+    icon: LinkedinIcon,
+  },
+  { label: 'CV', href: 'https://flowcv.com/resume/qujb5aqumswm', icon: FileText },
 ]
+
+const availability = ['Full-time opportunities', 'Freelance projects', 'Interesting collaborations']
 
 export function Contact() {
   return (
-    <MotionSection id="contact">
+    <MotionSection id="contact" stagger={0.12}>
       <Container>
         <motion.p
           variants={fadeUp}
@@ -23,45 +28,78 @@ export function Contact() {
         >
           07 — Contact
         </motion.p>
-        <motion.h2
+
+        <div className="mt-8 max-w-4xl">
+          <motion.h2
+            variants={fadeUp}
+            className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.88] tracking-tighter text-ink sm:text-[6.5rem] lg:text-[7.5rem]"
+          >
+            Let&apos;s build
+          </motion.h2>
+          <motion.h2
+            variants={fadeUp}
+            className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.88] tracking-tighter text-outline-accent sm:text-[6.5rem] lg:text-[7.5rem]"
+          >
+            something.
+          </motion.h2>
+        </div>
+
+        <motion.p
           variants={fadeUp}
-          className="mt-6 text-balance font-display text-[13vw] font-medium uppercase leading-[0.9] tracking-tighter text-ink sm:text-[8rem] lg:text-[9rem]"
+          className="mt-8 max-w-md text-base leading-relaxed text-ink-muted sm:text-lg"
         >
-          Let&apos;s build.
-        </motion.h2>
+          Have a project, a role, or an idea worth talking through? I&apos;d like to hear about it.
+        </motion.p>
+
+        <motion.div variants={fadeUp} className="mt-14 border-t border-border pt-10">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
+            Get in touch
+          </p>
+          <div className="mt-5">
+            <EmailCTA />
+          </div>
+        </motion.div>
 
         <motion.div
           variants={fadeUp}
-          className="mt-12 flex flex-col gap-10 border-t border-border pt-10 lg:flex-row lg:items-end lg:justify-between"
+          className="mt-16 flex flex-col gap-10 border-t border-border pt-10 sm:flex-row sm:items-start sm:justify-between"
         >
-          <p className="max-w-sm text-base leading-relaxed text-ink-muted">
-            Have an idea, project or opportunity? Let&apos;s talk.
-          </p>
-
-          <div className="flex flex-col items-start gap-6 lg:items-end">
-            <AnimatedButton
-              href="mailto:dogukan.baybut@gmail.com"
-              icon={<Mail className="size-4" />}
-              cursorLabel="Email"
-            >
-              Say hello
-            </AnimatedButton>
-
-            <div className="flex flex-wrap gap-6">
-              {contactLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-                  data-cursor="Open"
-                  className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-ink-muted transition-colors hover:text-ink"
-                >
-                  <link.icon className="size-3.5" />
-                  {link.label}
-                </a>
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
+              Available for
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">
+              {availability.map((item, i) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  {i > 0 && <span className="text-accent">/</span>}
+                  {item}
+                </span>
               ))}
             </div>
+          </div>
+
+          <div className="flex items-center gap-8">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                data-cursor="Open"
+                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors duration-300 hover:text-ink"
+              >
+                <social.icon className="size-3.5" />
+                {social.label}
+                <motion.span
+                  className="inline-flex"
+                  initial={{ x: 0, y: 0 }}
+                  whileHover={{ x: 3, y: -3 }}
+                  transition={{ duration: 0.2, ease: 'easeOut' }}
+                >
+                  <ArrowUpRight className="size-3" aria-hidden="true" />
+                </motion.span>
+              </a>
+            ))}
           </div>
         </motion.div>
       </Container>

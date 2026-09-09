@@ -110,7 +110,7 @@ export function Hero() {
             className="mt-10 flex flex-col gap-8 border-t border-border pt-8 lg:flex-row lg:items-end lg:justify-between"
           >
             <p className="max-w-md text-base leading-relaxed text-ink-muted sm:text-lg">
-              Doğukan Baybut — building user-focused, high-performance mobile applications.
+              Doğukan Baybut — building user-focused, high-performance web and mobile applications.
               Currently deep in <CyclingFocus />
             </p>
 

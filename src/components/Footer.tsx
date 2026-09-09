@@ -4,8 +4,8 @@ import { GithubIcon, LinkedinIcon } from './ui/BrandIcons'
 
 const socials = [
   { label: 'Email', href: 'mailto:dogukan.baybut@gmail.com', icon: Mail },
-  { label: 'GitHub', href: 'https://github.com', icon: GithubIcon },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: LinkedinIcon },
+  { label: 'GitHub', href: 'https://github.com/dogukanbaybut', icon: GithubIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/do%C4%9Fukan-baybut-a47430229/', icon: LinkedinIcon },
 ]
 
 export function Footer() {
@@ -17,7 +17,7 @@ export function Footer() {
         <div className="text-center sm:text-left">
           <p className="text-ink">Doğukan Baybut</p>
           <p className="mt-1 text-ink-faint normal-case tracking-normal">
-            Building things for mobile.
+            Building things for the web and mobile.
           </p>
         </div>
 

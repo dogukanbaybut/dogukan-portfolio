@@ -12,8 +12,8 @@ const facets = [
   },
   {
     n: '02',
-    title: 'React Native',
-    description: 'Building cross-platform mobile apps with a native feel.',
+    title: 'React & React Native',
+    description: 'Building web interfaces and cross-platform mobile apps from one skill set.',
   },
   {
     n: '03',
@@ -38,18 +38,19 @@ export function About() {
             variants={fadeUp}
             className="text-balance font-display text-2xl font-medium leading-snug tracking-tight text-ink lg:col-span-7 lg:text-3xl"
           >
-            My vision is to become a skilled Mobile App Developer, specializing in{' '}
+            My vision is to become a skilled Frontend & Mobile Developer, working across{' '}
+            <span className="text-accent">React</span> and{' '}
             <span className="text-accent">React Native</span> to build user-focused,
-            high-performance and scalable mobile applications — while staying current with
+            high-performance and scalable web and mobile applications — while staying current with
             emerging technologies.
           </motion.p>
 
           <motion.div variants={fadeUp} className="lg:col-span-5">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">Mission</p>
             <p className="mt-4 text-sm leading-relaxed text-ink-muted sm:text-base">
-              To continuously grow my knowledge and experience in the React Native ecosystem to
-              produce modern, reliable and maintainable mobile apps — delivering real solutions
-              for real users, and technical value to every project I&apos;m part of.
+              To continuously grow my knowledge and experience across the React and React Native
+              ecosystems to produce modern, reliable and maintainable products — delivering real
+              solutions for real users, and technical value to every project I&apos;m part of.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink-faint">
               <span>TR — Native</span>
