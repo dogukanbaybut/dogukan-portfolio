@@ -1,3 +1,4 @@
+import { ReactLenis } from 'lenis/react'
 import { CustomCursor } from './components/ui/CustomCursor'
 import { Preloader } from './components/ui/Preloader'
 import { ScrollProgress } from './components/ui/ScrollProgress'
@@ -14,23 +15,33 @@ import { Footer } from './components/Footer'
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-bg bg-noise text-ink">
-      <Preloader />
-      <ScrollProgress />
-      <CustomCursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-        <Experience />
-        <Education />
-        <CurrentlyBuilding />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.1,
+        duration: 1.2,
+        wheelMultiplier: 1,
+        anchors: true,
+      }}
+    >
+      <div className="relative min-h-screen bg-bg bg-noise text-ink">
+        <Preloader />
+        <ScrollProgress />
+        <CustomCursor />
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <TechStack />
+          <Projects />
+          <Experience />
+          <Education />
+          <CurrentlyBuilding />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ReactLenis>
   )
 }
 

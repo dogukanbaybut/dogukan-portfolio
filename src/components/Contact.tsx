@@ -3,6 +3,7 @@ import { ArrowUpRight, FileText } from 'lucide-react'
 import { Container } from './ui/Container'
 import { MotionSection } from './ui/MotionSection'
 import { EmailCTA } from './ui/EmailCTA'
+import { ScrambleText } from './ui/ScrambleText'
 import { GithubIcon, LinkedinIcon } from './ui/BrandIcons'
 import { fadeUp } from './ui/motionVariants'
 
@@ -34,13 +35,13 @@ export function Contact() {
             variants={fadeUp}
             className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.88] tracking-tighter text-ink sm:text-[6.5rem] lg:text-[7.5rem]"
           >
-            Let&apos;s build
+            <ScrambleText text="Let's build" delay={150} />
           </motion.h2>
           <motion.h2
             variants={fadeUp}
             className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.88] tracking-tighter text-outline-accent sm:text-[6.5rem] lg:text-[7.5rem]"
           >
-            something.
+            <ScrambleText text="something." delay={300} />
           </motion.h2>
         </div>
 

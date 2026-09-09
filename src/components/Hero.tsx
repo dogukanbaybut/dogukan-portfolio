@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowDown } from 'lucide-react'
 import { Container } from './ui/Container'
 import { AnimatedButton } from './ui/AnimatedButton'
+import { ScrambleText } from './ui/ScrambleText'
 
 const focusWords = ['React Native', 'React.js', 'Firebase', 'TypeScript']
 
@@ -81,7 +82,7 @@ export function Hero() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="block pl-6 sm:pl-10 lg:pl-16"
             >
-              Building
+              <ScrambleText text="Building" duration={1100} delay={200} />
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
@@ -89,7 +90,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="block pl-6 text-outline-accent sm:pl-10 lg:pl-16"
             >
-              React
+              <ScrambleText text="React" duration={1100} delay={550} />
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
@@ -97,7 +98,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="block pl-6 sm:pl-10 lg:pl-16"
             >
-              Products
+              <ScrambleText text="Products" duration={1100} delay={900} />
             </motion.span>
           </h1>
         </div>
