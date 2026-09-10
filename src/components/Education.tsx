@@ -24,9 +24,9 @@ export function Education() {
         <SectionHeading index="05" eyebrow={t('education.eyebrow')} title={t('education.title')} />
 
         <div className="mt-16 border-t border-border">
-          {items.map((item) => (
+          {items.map((item, i) => (
             <motion.div
-              key={item.school}
+              key={i}
               variants={fadeUp}
               className="group grid grid-cols-1 gap-2 border-b border-border py-7 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-6"
             >
@@ -45,8 +45,8 @@ export function Education() {
                 <p className="mt-1 text-sm text-ink-muted">{item.degree}</p>
                 {item.details && (
                   <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-ink-faint">
-                    {item.details.map((detail) => (
-                      <span key={detail}>{detail}</span>
+                    {item.details.map((detail, j) => (
+                      <span key={j}>{detail}</span>
                     ))}
                   </div>
                 )}

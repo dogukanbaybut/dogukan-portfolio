@@ -23,9 +23,9 @@ export function Experience() {
         <SectionHeading index="04" eyebrow={t('experience.eyebrow')} title={t('experience.title')} />
 
         <div className="mt-16 border-t border-border">
-          {items.map((item) => (
+          {items.map((item, i) => (
             <motion.div
-              key={item.company}
+              key={i}
               variants={fadeUp}
               className="group grid grid-cols-1 gap-2 border-b border-border py-7 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-6"
             >
