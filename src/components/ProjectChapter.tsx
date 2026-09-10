@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { GithubIcon } from './ui/BrandIcons'
 import { TechBadge } from './ui/TechBadge'
+import { useTilt } from '../hooks/useTilt'
 import type { Project } from '../data/projects'
 
 export function ProjectChapter({ project, order }: { project: Project; order: string }) {
@@ -15,6 +16,8 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
 
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.92, 1, 0.96])
   const imageY = useTransform(scrollYProgress, [0, 1], [reduceMotion ? 0 : -24, reduceMotion ? 0 : 24])
+  const tiltRef = useRef<HTMLDivElement>(null)
+  const tilt = useTilt(tiltRef)
 
   return (
     <div ref={ref} className="grid grid-cols-1 gap-10 border-t border-border py-16 lg:grid-cols-12 lg:gap-8 lg:py-24">
@@ -81,8 +84,11 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
       <div className="lg:col-span-8">
         <div className="lg:sticky lg:top-28">
           <motion.div
-            style={{ scale }}
-            className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-border bg-bg-elevated bg-grid"
+            ref={tiltRef}
+            onMouseMove={tilt.onMouseMove}
+            onMouseLeave={tilt.onMouseLeave}
+            style={{ scale, rotateX: tilt.rotateX, rotateY: tilt.rotateY, transformPerspective: 1000 }}
+            className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-border bg-bg-elevated bg-grid [transform-style:preserve-3d]"
           >
             <motion.div
               style={{ y: imageY }}
@@ -93,6 +99,11 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
               </span>
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent" />
+            <motion.div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{ opacity: tilt.glareOpacity, background: tilt.glareBackground }}
+            />
           </motion.div>
         </div>
       </div>
