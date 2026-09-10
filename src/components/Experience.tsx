@@ -1,18 +1,29 @@
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
-import { experience } from '../data/experience'
+
+interface ExperienceItem {
+  company: string
+  role: string
+  period: string
+  location: string
+  description: string
+}
 
 export function Experience() {
+  const { t } = useTranslation()
+  const items = t('experience.items', { returnObjects: true }) as ExperienceItem[]
+
   return (
     <MotionSection id="experience">
       <Container>
-        <SectionHeading index="04" eyebrow="Experience" title="Where I've worked" />
+        <SectionHeading index="04" eyebrow={t('experience.eyebrow')} title={t('experience.title')} />
 
         <div className="mt-16 border-t border-border">
-          {experience.map((item) => (
+          {items.map((item) => (
             <motion.div
               key={item.company}
               variants={fadeUp}

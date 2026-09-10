@@ -1,60 +1,43 @@
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
 
-const facets = [
-  {
-    n: '01',
-    title: 'Computer Engineering',
-    description: 'A formal foundation in algorithms, systems and software design.',
-  },
-  {
-    n: '02',
-    title: 'React & React Native',
-    description: 'Building web interfaces and cross-platform mobile apps from one skill set.',
-  },
-  {
-    n: '03',
-    title: 'Firebase & Backend',
-    description: 'Realtime data, auth and secure multi-tenant architectures.',
-  },
-  {
-    n: '04',
-    title: 'Product Building',
-    description: 'I care about the whole product, not just the code that ships it.',
-  },
-]
+interface Facet {
+  n: string
+  title: string
+  description: string
+}
 
 export function About() {
+  const { t } = useTranslation()
+  const languages = t('about.languages', { returnObjects: true }) as string[]
+  const facets = t('about.facets', { returnObjects: true }) as Facet[]
+
   return (
     <MotionSection id="about">
       <Container>
-        <SectionHeading index="01" eyebrow="Vision & Mission" title="Who I am" />
+        <SectionHeading index="01" eyebrow={t('about.eyebrow')} title={t('about.title')} />
 
         <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-12">
           <motion.p
             variants={fadeUp}
             className="text-balance font-display text-2xl font-medium leading-snug tracking-tight text-ink lg:col-span-7 lg:text-3xl"
           >
-            My vision is to become a skilled Frontend & Mobile Developer, working across{' '}
-            <span className="text-accent">React</span> and{' '}
-            <span className="text-accent">React Native</span> to build user-focused,
-            high-performance and scalable web and mobile applications — while staying current with
-            emerging technologies.
+            {t('about.vision')}
           </motion.p>
 
           <motion.div variants={fadeUp} className="lg:col-span-5">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">Mission</p>
-            <p className="mt-4 text-sm leading-relaxed text-ink-muted sm:text-base">
-              To continuously grow my knowledge and experience across the React and React Native
-              ecosystems to produce modern, reliable and maintainable products — delivering real
-              solutions for real users, and technical value to every project I&apos;m part of.
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
+              {t('about.missionLabel')}
             </p>
+            <p className="mt-4 text-sm leading-relaxed text-ink-muted sm:text-base">{t('about.mission')}</p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink-faint">
-              <span>TR — Native</span>
-              <span>EN — B1</span>
+              {languages.map((lng) => (
+                <span key={lng}>{lng}</span>
+              ))}
             </div>
           </motion.div>
         </div>

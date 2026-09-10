@@ -1,5 +1,6 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ArrowUpRight } from 'lucide-react'
 import { GithubIcon } from './ui/BrandIcons'
 import { TechBadge } from './ui/TechBadge'
@@ -9,6 +10,7 @@ import type { Project } from '../data/projects'
 export function ProjectChapter({ project, order }: { project: Project; order: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const reduceMotion = useReducedMotion()
+  const { t } = useTranslation()
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
@@ -57,14 +59,14 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              data-cursor="View"
+              data-cursor={t('cursor.view')}
               className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-ink"
             >
-              <GithubIcon className="size-4" /> Code
+              <GithubIcon className="size-4" /> {t('projects.code')}
             </a>
           ) : (
             <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-faint">
-              <GithubIcon className="size-4" /> Code coming soon
+              <GithubIcon className="size-4" /> {t('projects.codeComingSoon')}
             </span>
           )}
           {project.liveUrl && (
@@ -72,10 +74,10 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              data-cursor="Open"
+              data-cursor={t('cursor.open')}
               className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-ink"
             >
-              <ArrowUpRight className="size-4" /> Live
+              <ArrowUpRight className="size-4" /> {t('projects.live')}
             </a>
           )}
         </div>

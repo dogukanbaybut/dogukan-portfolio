@@ -1,16 +1,13 @@
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import { Container } from './ui/Container'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
 
-const focuses = [
-  'React & React Native Ecosystems',
-  'Firebase & Realtime Architectures',
-  'Cross-Platform Performance',
-  'Modern Web & Mobile UX',
-]
-
 export function CurrentlyBuilding() {
+  const { t } = useTranslation()
+  const focuses = t('currentlyBuilding.focuses', { returnObjects: true }) as string[]
+
   return (
     <MotionSection id="focus">
       <Container>
@@ -18,14 +15,13 @@ export function CurrentlyBuilding() {
           variants={fadeUp}
           className="font-mono text-xs uppercase tracking-[0.22em] text-accent"
         >
-          06 — Currently Building
+          {t('currentlyBuilding.eyebrow')}
         </motion.p>
         <motion.h2
           variants={fadeUp}
           className="mt-6 max-w-3xl text-balance font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-5xl"
         >
-          Deepening my React and React Native expertise and exploring Firebase-backed
-          architectures for scalable web and mobile products.
+          {t('currentlyBuilding.heading')}
         </motion.h2>
 
         <motion.div

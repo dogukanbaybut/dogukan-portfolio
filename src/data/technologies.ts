@@ -1,18 +1,12 @@
 import type { ComponentType } from 'react'
 import { Atom, Braces, Component, FileCode, FileCode2, Flame, Palette } from 'lucide-react'
 
-export interface Technology {
-  name: string
-  description: string
-  icon: ComponentType<{ className?: string; strokeWidth?: number }>
+export const technologyIcons: Record<string, ComponentType<{ className?: string; strokeWidth?: number }>> = {
+  'React Native': Component,
+  'React.js': Atom,
+  TypeScript: FileCode2,
+  JavaScript: Braces,
+  Firebase: Flame,
+  HTML5: FileCode,
+  CSS: Palette,
 }
-
-export const technologies: Technology[] = [
-  { name: 'React Native', description: 'Cross-platform mobile apps', icon: Component },
-  { name: 'React.js', description: 'Component-driven UIs', icon: Atom },
-  { name: 'TypeScript', description: 'Typed, reliable code', icon: FileCode2 },
-  { name: 'JavaScript', description: 'The web, natively', icon: Braces },
-  { name: 'Firebase', description: 'Realtime backend & auth', icon: Flame },
-  { name: 'HTML5', description: 'Semantic structure', icon: FileCode },
-  { name: 'CSS', description: 'Styling & layout', icon: Palette },
-]

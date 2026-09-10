@@ -1,5 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ArrowDown } from 'lucide-react'
 import { Container } from './ui/Container'
 import { AnimatedButton } from './ui/AnimatedButton'
@@ -37,6 +38,9 @@ function CyclingFocus() {
 
 export function Hero() {
   const reduceMotion = useReducedMotion()
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language
+  const headline = t('hero.headline', { returnObjects: true }) as string[]
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -61,13 +65,13 @@ export function Hero() {
       <motion.div style={{ opacity: fade }} className="relative">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-            <span>Computer Engineering Student</span>
+            <span>{t('hero.role')}</span>
             <span className="inline-flex items-center gap-2">
               <span className="relative flex size-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-accent" />
               </span>
-              Available for opportunities
+              {t('hero.available')}
             </span>
           </div>
         </Container>
@@ -82,7 +86,7 @@ export function Hero() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="block pl-6 sm:pl-10 lg:pl-16"
             >
-              <ScrambleText text="Building" duration={1100} delay={200} />
+              <ScrambleText key={lang} text={headline[0]} duration={1100} delay={200} />
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
@@ -90,7 +94,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="block pl-6 text-outline-accent sm:pl-10 lg:pl-16"
             >
-              <ScrambleText text="React" duration={1100} delay={550} />
+              <ScrambleText key={lang} text={headline[1]} duration={1100} delay={550} />
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
@@ -98,7 +102,7 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="block pl-6 sm:pl-10 lg:pl-16"
             >
-              <ScrambleText text="Products" duration={1100} delay={900} />
+              <ScrambleText key={lang} text={headline[2]} duration={1100} delay={900} />
             </motion.span>
           </h1>
         </div>
@@ -111,16 +115,15 @@ export function Hero() {
             className="mt-10 flex flex-col gap-8 border-t border-border pt-8 lg:flex-row lg:items-end lg:justify-between"
           >
             <p className="max-w-md text-base leading-relaxed text-ink-muted sm:text-lg">
-              Doğukan Baybut — building user-focused, high-performance web and mobile applications.
-              Currently deep in <CyclingFocus />
+              {t('hero.intro')} <CyclingFocus />
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <AnimatedButton href="#projects" variant="primary" cursorLabel="View">
-                View Work
+              <AnimatedButton href="#projects" variant="primary" cursorLabel={t('cursor.view')}>
+                {t('hero.viewWork')}
               </AnimatedButton>
-              <AnimatedButton href="#contact" variant="ghost" cursorLabel="Talk">
-                Contact
+              <AnimatedButton href="#contact" variant="ghost" cursorLabel={t('cursor.talk')}>
+                {t('hero.contact')}
               </AnimatedButton>
             </div>
           </motion.div>
@@ -129,13 +132,13 @@ export function Hero() {
 
       <Container>
         <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-          <span>36.8121° N, 34.6415° E — Mersin, TR</span>
+          <span>{t('hero.coordinates')}</span>
           <motion.span
             animate={reduceMotion ? undefined : { y: [0, 5, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             className="inline-flex items-center gap-2"
           >
-            Scroll <ArrowDown className="size-3.5" aria-hidden="true" />
+            {t('hero.scroll')} <ArrowDown className="size-3.5" aria-hidden="true" />
           </motion.span>
         </div>
       </Container>

@@ -1,0 +1,175 @@
+{
+  "navbar": {
+    "links": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
+    "talk": "Let's Talk",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchToTurkish": "Switch to Turkish"
+  },
+  "hero": {
+    "role": "Computer Engineering Student",
+    "available": "Available for opportunities",
+    "headline": ["Building", "React", "Products"],
+    "intro": "Doğukan Baybut — building user-focused, high-performance web and mobile applications. Currently deep in",
+    "viewWork": "View Work",
+    "contact": "Contact",
+    "coordinates": "36.8121° N, 34.6415° E — Mersin, TR",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "eyebrow": "Vision & Mission",
+    "title": "Who I am",
+    "vision": "My vision is to become a skilled Frontend & Mobile Developer, working across React and React Native to build user-focused, high-performance and scalable web and mobile applications — while staying current with emerging technologies.",
+    "missionLabel": "Mission",
+    "mission": "To continuously grow my knowledge and experience across the React and React Native ecosystems to produce modern, reliable and maintainable products — delivering real solutions for real users, and technical value to every project I'm part of.",
+    "languages": ["TR — Native", "EN — B1"],
+    "facets": [
+      {
+        "n": "01",
+        "title": "Computer Engineering",
+        "description": "A formal foundation in algorithms, systems and software design."
+      },
+      {
+        "n": "02",
+        "title": "React & React Native",
+        "description": "Building web interfaces and cross-platform mobile apps from one skill set."
+      },
+      {
+        "n": "03",
+        "title": "Firebase & Backend",
+        "description": "Realtime data, auth and secure multi-tenant architectures."
+      },
+      {
+        "n": "04",
+        "title": "Product Building",
+        "description": "I care about the whole product, not just the code that ships it."
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "Tech Stack",
+    "title": "Tools I reach for",
+    "description": "A pragmatic set of technologies, chosen for reliability and developer experience.",
+    "items": [
+      { "name": "React Native", "description": "Cross-platform mobile apps" },
+      { "name": "React.js", "description": "Component-driven UIs" },
+      { "name": "TypeScript", "description": "Typed, reliable code" },
+      { "name": "JavaScript", "description": "The web, natively" },
+      { "name": "Firebase", "description": "Realtime backend & auth" },
+      { "name": "HTML5", "description": "Semantic structure" },
+      { "name": "CSS", "description": "Styling & layout" }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Featured Projects",
+    "title": "Things I've built",
+    "description": "A selection of products and experiments — real problems, real code.",
+    "code": "Code",
+    "codeComingSoon": "Code coming soon",
+    "live": "Live",
+    "items": [
+      {
+        "name": "BolusApp",
+        "category": "Mobile Finance / React Native",
+        "description": "A React Native & Firebase mobile app that automates shared expense management and debt tracking between roommates, with real-time sync and OCR-based receipt scanning.",
+        "highlights": [
+          "Secure multi-tenant architecture isolated by household ID, built on Firebase Firestore and Authentication",
+          "Dynamic debt-calculation engine for instant net balances, with CSV export for financial reports",
+          "Dark mode support and modular state management via Context API for a refined user experience"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "title": "Where I've worked",
+    "items": [
+      {
+        "company": "Xenovale Technology",
+        "role": "Mobile Developer (Intern)",
+        "period": "Jun 2026 — Present",
+        "location": "Mersin, Türkiye",
+        "description": "Contributing to the company's web and mobile application development. Working on frontend development, UI improvements and technical tasks driven by project needs, while building individual software projects to grow expertise in modern web and mobile technologies."
+      },
+      {
+        "company": "Kardelen Yazılım",
+        "role": "Mobile Developer (Intern)",
+        "period": "Jul 2025 — Aug 2025",
+        "location": "Mersin, Türkiye",
+        "description": "Built Flutter projects including patient registration and listing systems, OCR-based medical receipt/invoice scanning, and location tracking features."
+      },
+      {
+        "company": "Mersin University",
+        "role": "Web Developer (Remote)",
+        "period": "Jun 2022 — Jul 2022",
+        "location": "Mersin, Türkiye",
+        "description": "Remote internship at Mersin University focused on web design projects."
+      }
+    ]
+  },
+  "education": {
+    "eyebrow": "Education",
+    "title": "Academic background",
+    "inProgress": "In progress",
+    "items": [
+      {
+        "school": "Karamanoğlu Mehmetbey University",
+        "degree": "Computer Engineering (B.Sc.)",
+        "period": "2023 — 2026",
+        "location": "Karaman, Türkiye",
+        "ongoing": true
+      },
+      {
+        "school": "Mersin University",
+        "degree": "Computer Programming (Associate Degree)",
+        "period": "2020 — 2022",
+        "location": "Mersin, Türkiye",
+        "details": ["Computer Maintenance", "Web Programming", "Database Management", "Visual Programming"]
+      }
+    ]
+  },
+  "currentlyBuilding": {
+    "eyebrow": "06 — Currently Building",
+    "heading": "Deepening my React and React Native expertise and exploring Firebase-backed architectures for scalable web and mobile products.",
+    "focuses": [
+      "React & React Native Ecosystems",
+      "Firebase & Realtime Architectures",
+      "Cross-Platform Performance",
+      "Modern Web & Mobile UX"
+    ]
+  },
+  "contact": {
+    "eyebrow": "07 — Contact",
+    "headline": ["Let's build", "something."],
+    "body": "Have a project, a role, or an idea worth talking through? I'd like to hear about it.",
+    "getInTouch": "Get in touch",
+    "availableFor": "Available for",
+    "availability": ["Full-time opportunities", "Freelance projects", "Interesting collaborations"],
+    "copyEmail": "Copy email",
+    "copied": "Copied",
+    "socialLinks": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "cv": "CV"
+    }
+  },
+  "footer": {
+    "tagline": "Building things for the web and mobile.",
+    "email": "Email"
+  },
+  "cursor": {
+    "top": "Top",
+    "go": "Go",
+    "talk": "Talk",
+    "view": "View",
+    "open": "Open",
+    "email": "Email",
+    "copy": "Copy"
+  }
+}

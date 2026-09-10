@@ -1,21 +1,27 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Menu, X } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Magnetic } from './ui/Magnetic'
 import { cn } from '../lib/utils'
 
-const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#tech-stack' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
-]
-
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language
+
+  const links = [
+    { label: t('navbar.links.about'), href: '#about' },
+    { label: t('navbar.links.skills'), href: '#tech-stack' },
+    { label: t('navbar.links.projects'), href: '#projects' },
+    { label: t('navbar.links.experience'), href: '#experience' },
+    { label: t('navbar.links.contact'), href: '#contact' },
+  ]
+
+  const toggleLang = () => i18n.changeLanguage(lang === 'en' ? 'tr' : 'en')
+  const langOrder = lang === 'tr' ? (['tr', 'en'] as const) : (['en', 'tr'] as const)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -34,7 +40,7 @@ export function Navbar() {
       <Container className="flex items-center justify-between py-5">
         <a
           href="#top"
-          data-cursor="Top"
+          data-cursor={t('cursor.top')}
           className="font-mono text-sm font-medium tracking-tight text-ink"
         >
           doğukan<span className="text-accent">.</span>baybut
@@ -45,7 +51,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              data-cursor="Go"
+              data-cursor={t('cursor.go')}
               className="group relative font-mono text-xs uppercase tracking-[0.12em] text-ink-muted transition-colors hover:text-ink"
             >
               {link.label}
@@ -54,25 +60,51 @@ export function Navbar() {
           ))}
         </nav>
 
-        <Magnetic className="hidden md:inline-block" strength={0.4}>
-          <a
-            href="#contact"
-            data-cursor="Talk"
-            className="border-b border-ink-faint pb-0.5 font-mono text-xs uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent"
+        <div className="hidden items-center gap-6 md:flex">
+          <button
+            type="button"
+            onClick={toggleLang}
+            aria-label={t('navbar.switchToTurkish')}
+            className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-[0.12em] text-ink-muted transition-colors hover:text-ink"
           >
-            Let&apos;s Talk
-          </a>
-        </Magnetic>
+            <span className={cn(lang === langOrder[0] && 'text-ink')}>{langOrder[0].toUpperCase()}</span>
+            <span className="text-ink-faint">/</span>
+            <span className={cn(lang === langOrder[1] && 'text-ink')}>{langOrder[1].toUpperCase()}</span>
+          </button>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center justify-center border border-border p-2 text-ink md:hidden"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+          <Magnetic className="inline-block" strength={0.4}>
+            <a
+              href="#contact"
+              data-cursor={t('cursor.talk')}
+              className="border-b border-ink-faint pb-0.5 font-mono text-xs uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent"
+            >
+              {t('navbar.talk')}
+            </a>
+          </Magnetic>
+        </div>
+
+        <div className="flex items-center gap-3 md:hidden">
+          <button
+            type="button"
+            onClick={toggleLang}
+            aria-label={t('navbar.switchToTurkish')}
+            className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-[0.12em] text-ink-muted transition-colors hover:text-ink"
+          >
+            <span className={cn(lang === langOrder[0] && 'text-ink')}>{langOrder[0].toUpperCase()}</span>
+            <span className="text-ink-faint">/</span>
+            <span className={cn(lang === langOrder[1] && 'text-ink')}>{langOrder[1].toUpperCase()}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex items-center justify-center border border-border p-2 text-ink"
+            aria-label={open ? t('navbar.closeMenu') : t('navbar.openMenu')}
+            aria-expanded={open}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </Container>
 
       <AnimatePresence>
@@ -101,7 +133,7 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="mt-2 border-t border-border px-1 py-3 font-mono text-sm uppercase tracking-[0.1em] text-ink"
               >
-                Let&apos;s Talk
+                {t('navbar.talk')}
               </a>
             </Container>
           </motion.nav>

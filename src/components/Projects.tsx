@@ -1,22 +1,35 @@
+import { useTranslation } from 'react-i18next'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { ProjectChapter } from './ProjectChapter'
-import { projects } from '../data/projects'
+import { projectsMeta } from '../data/projects'
+import type { Project } from '../data/projects'
+
+interface ProjectText {
+  name: string
+  category: string
+  description: string
+  highlights?: string[]
+}
 
 export function Projects() {
+  const { t } = useTranslation()
+  const texts = t('projects.items', { returnObjects: true }) as ProjectText[]
+  const items: Project[] = texts.map((text, i) => ({ ...text, ...projectsMeta[i] }))
+
   return (
     <MotionSection id="projects">
       <Container>
         <SectionHeading
           index="03"
-          eyebrow="Featured Projects"
-          title="Things I've built"
-          description="A selection of products and experiments — real problems, real code."
+          eyebrow={t('projects.eyebrow')}
+          title={t('projects.title')}
+          description={t('projects.description')}
         />
 
         <div>
-          {projects.map((project, i) => (
+          {items.map((project, i) => (
             <ProjectChapter
               key={project.name}
               project={project}

@@ -1,6 +1,7 @@
 import { motion, useMotionValue, useReducedMotion, useSpring } from 'motion/react'
 import { useRef, useState } from 'react'
 import type { MouseEvent } from 'react'
+import { useTranslation } from 'react-i18next'
 import { ArrowUpRight, Check, Copy } from 'lucide-react'
 import { usePointerFine } from '../../hooks/usePointerFine'
 
@@ -27,6 +28,7 @@ export function EmailCTA() {
   const reduceMotion = useReducedMotion()
   const isFine = usePointerFine()
   const [copied, setCopied] = useState(false)
+  const { t } = useTranslation()
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -66,7 +68,7 @@ export function EmailCTA() {
         onMouseMove={handleMove}
         onMouseLeave={handleLeave}
         style={{ x: springX, y: springY }}
-        data-cursor="Email"
+        data-cursor={t('cursor.email')}
         className="group inline-flex max-w-full items-center gap-3 font-display text-2xl font-medium leading-tight tracking-tight text-ink transition-colors duration-300 hover:text-accent sm:text-4xl lg:text-5xl"
       >
         <span className="max-w-full border-b-2 border-ink-faint pb-1 [overflow-wrap:anywhere] transition-colors duration-300 group-hover:border-accent">
@@ -86,18 +88,18 @@ export function EmailCTA() {
         <button
           type="button"
           onClick={handleCopy}
-          data-cursor="Copy"
+          data-cursor={t('cursor.copy')}
           className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-faint transition-colors duration-300 hover:text-ink"
         >
           {copied ? (
             <>
               <Check className="size-3.5 text-accent" aria-hidden="true" />
-              Copied
+              {t('contact.copied')}
             </>
           ) : (
             <>
               <Copy className="size-3.5" aria-hidden="true" />
-              Copy email
+              {t('contact.copyEmail')}
             </>
           )}
         </button>

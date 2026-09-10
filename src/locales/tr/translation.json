@@ -1,0 +1,175 @@
+{
+  "navbar": {
+    "links": {
+      "about": "Hakkımda",
+      "skills": "Yetenekler",
+      "projects": "Projeler",
+      "experience": "Deneyim",
+      "contact": "İletişim"
+    },
+    "talk": "Konuşalım",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "switchToTurkish": "İngilizce'ye geç"
+  },
+  "hero": {
+    "role": "Bilgisayar Mühendisliği Öğrencisi",
+    "available": "Yeni fırsatlara açığım",
+    "headline": ["React", "Ürünleri", "Geliştiriyorum."],
+    "intro": "Doğukan Baybut — kullanıcı odaklı, yüksek performanslı web ve mobil uygulamalar geliştiriyorum. Şu anda yoğun olarak",
+    "viewWork": "Projeleri Gör",
+    "contact": "İletişim",
+    "coordinates": "36.8121° K, 34.6415° D — Mersin, TR",
+    "scroll": "Kaydır"
+  },
+  "about": {
+    "eyebrow": "Vizyon & Misyon",
+    "title": "Ben kimim",
+    "vision": "Vizyonum; React ve React Native ile kullanıcı odaklı, yüksek performanslı ve ölçeklenebilir web ve mobil uygulamalar geliştiren, gelişen teknolojileri yakından takip eden yetkin bir Frontend & Mobile Developer olmak.",
+    "missionLabel": "Misyon",
+    "mission": "React ve React Native ekosistemlerindeki bilgi ve deneyimimi sürekli geliştirerek modern, güvenilir ve sürdürülebilir ürünler ortaya koymak; gerçek kullanıcılar için gerçek çözümler ve dahil olduğum her projeye teknik değer katmak.",
+    "languages": ["TR — Anadil", "EN — B1"],
+    "facets": [
+      {
+        "n": "01",
+        "title": "Bilgisayar Mühendisliği",
+        "description": "Algoritmalar, sistemler ve yazılım tasarımında sağlam bir akademik temel."
+      },
+      {
+        "n": "02",
+        "title": "React & React Native",
+        "description": "Tek bir beceri setiyle web arayüzleri ve çoklu platform mobil uygulamalar geliştirme."
+      },
+      {
+        "n": "03",
+        "title": "Firebase & Backend",
+        "description": "Gerçek zamanlı veri, kimlik doğrulama ve güvenli çok kiracılı mimariler."
+      },
+      {
+        "n": "04",
+        "title": "Ürün Geliştirme",
+        "description": "Sadece kodla değil, ürünün bütünüyle ilgileniyorum."
+      }
+    ]
+  },
+  "techStack": {
+    "eyebrow": "Teknoloji Yığını",
+    "title": "Kullandığım araçlar",
+    "description": "Güvenilirlik ve geliştirici deneyimi gözetilerek seçilmiş, pragmatik bir teknoloji seti.",
+    "items": [
+      { "name": "React Native", "description": "Çoklu platform mobil uygulamalar" },
+      { "name": "React.js", "description": "Bileşen odaklı arayüzler" },
+      { "name": "TypeScript", "description": "Tip güvenli, güvenilir kod" },
+      { "name": "JavaScript", "description": "Web'in doğal dili" },
+      { "name": "Firebase", "description": "Gerçek zamanlı backend ve kimlik doğrulama" },
+      { "name": "HTML5", "description": "Anlamsal yapı" },
+      { "name": "CSS", "description": "Stil ve düzen" }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Öne Çıkan Projeler",
+    "title": "Geliştirdiğim şeyler",
+    "description": "Ürün ve deneylerden bir seçki — gerçek problemler, gerçek kod.",
+    "code": "Kod",
+    "codeComingSoon": "Kod yakında",
+    "live": "Canlı",
+    "items": [
+      {
+        "name": "BolusApp",
+        "category": "Mobil Finans / React Native",
+        "description": "Ev arkadaşları arasında ortak gider yönetimini ve borç takibini otomatikleştiren; gerçek zamanlı senkronizasyon ve OCR tabanlı fiş taramasına sahip bir React Native & Firebase mobil uygulaması.",
+        "highlights": [
+          "Firebase Firestore ve Authentication üzerine kurulu, hane kimliğine göre izole edilmiş güvenli çok kiracılı mimari",
+          "Anlık net bakiyeler için dinamik borç hesaplama motoru ve finansal raporlar için CSV dışa aktarma",
+          "Gelişmiş bir kullanıcı deneyimi için karanlık mod desteği ve Context API ile modüler durum yönetimi"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Deneyim",
+    "title": "Çalıştığım yerler",
+    "items": [
+      {
+        "company": "Xenovale Technology",
+        "role": "Mobil Geliştirici (Stajyer)",
+        "period": "Haz 2026 — Devam ediyor",
+        "location": "Mersin, Türkiye",
+        "description": "Şirketin web ve mobil uygulama geliştirme süreçlerine katkı sağlıyorum. Proje ihtiyaçlarına göre frontend geliştirme, arayüz iyileştirmeleri ve teknik görevler üzerinde çalışırken, modern web ve mobil teknolojilerdeki uzmanlığımı geliştirmek için bireysel yazılım projeleri de üretiyorum."
+      },
+      {
+        "company": "Kardelen Yazılım",
+        "role": "Mobil Geliştirici (Stajyer)",
+        "period": "Tem 2025 — Ağu 2025",
+        "location": "Mersin, Türkiye",
+        "description": "Hasta kayıt ve listeleme sistemleri, OCR tabanlı tıbbi fiş/fatura tarama ve konum takibi özellikleri içeren Flutter projeleri geliştirdim."
+      },
+      {
+        "company": "Mersin Üniversitesi",
+        "role": "Web Geliştirici (Uzaktan)",
+        "period": "Haz 2022 — Tem 2022",
+        "location": "Mersin, Türkiye",
+        "description": "Mersin Üniversitesi'nde web tasarım projelerine odaklanan uzaktan staj."
+      }
+    ]
+  },
+  "education": {
+    "eyebrow": "Eğitim",
+    "title": "Akademik geçmiş",
+    "inProgress": "Devam ediyor",
+    "items": [
+      {
+        "school": "Karamanoğlu Mehmetbey Üniversitesi",
+        "degree": "Bilgisayar Mühendisliği (Lisans)",
+        "period": "2023 — 2026",
+        "location": "Karaman, Türkiye",
+        "ongoing": true
+      },
+      {
+        "school": "Mersin Üniversitesi",
+        "degree": "Bilgisayar Programcılığı (Ön Lisans)",
+        "period": "2020 — 2022",
+        "location": "Mersin, Türkiye",
+        "details": ["Bilgisayar Bakımı", "Web Programlama", "Veritabanı Yönetimi", "Görsel Programlama"]
+      }
+    ]
+  },
+  "currentlyBuilding": {
+    "eyebrow": "06 — Şu An Üzerinde Çalıştıklarım",
+    "heading": "React ve React Native uzmanlığımı derinleştiriyor, ölçeklenebilir web ve mobil ürünler için Firebase tabanlı mimarileri araştırıyorum.",
+    "focuses": [
+      "React & React Native Ekosistemleri",
+      "Firebase & Gerçek Zamanlı Mimariler",
+      "Çoklu Platform Performansı",
+      "Modern Web & Mobil UX"
+    ]
+  },
+  "contact": {
+    "eyebrow": "07 — İletişim",
+    "headline": ["Birlikte bir şey", "yapalım."],
+    "body": "Konuşmaya değer bir proje, pozisyon ya da fikriniz mi var? Duymak isterim.",
+    "getInTouch": "İletişime geç",
+    "availableFor": "Uygun olduğum alanlar",
+    "availability": ["Tam zamanlı fırsatlar", "Serbest (freelance) projeler", "İlgi çekici iş birlikleri"],
+    "copyEmail": "E-postayı kopyala",
+    "copied": "Kopyalandı",
+    "socialLinks": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "cv": "CV"
+    }
+  },
+  "footer": {
+    "tagline": "Web ve mobil için ürünler geliştiriyorum.",
+    "email": "E-posta"
+  },
+  "cursor": {
+    "top": "Yukarı",
+    "go": "Git",
+    "talk": "Konuş",
+    "view": "İncele",
+    "open": "Aç",
+    "email": "E-posta",
+    "copy": "Kopyala"
+  }
+}

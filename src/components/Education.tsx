@@ -1,18 +1,30 @@
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
-import { education } from '../data/education'
+
+interface EducationItem {
+  school: string
+  degree: string
+  period: string
+  location: string
+  details?: string[]
+  ongoing?: boolean
+}
 
 export function Education() {
+  const { t } = useTranslation()
+  const items = t('education.items', { returnObjects: true }) as EducationItem[]
+
   return (
     <MotionSection id="education">
       <Container>
-        <SectionHeading index="05" eyebrow="Education" title="Academic background" />
+        <SectionHeading index="05" eyebrow={t('education.eyebrow')} title={t('education.title')} />
 
         <div className="mt-16 border-t border-border">
-          {education.map((item) => (
+          {items.map((item) => (
             <motion.div
               key={item.school}
               variants={fadeUp}
@@ -26,7 +38,7 @@ export function Education() {
                   </h3>
                   {item.ongoing && (
                     <span className="rounded-full border border-accent/30 bg-accent-soft px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wide text-accent">
-                      In progress
+                      {t('education.inProgress')}
                     </span>
                   )}
                 </div>

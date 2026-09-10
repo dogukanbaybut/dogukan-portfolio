@@ -1,10 +1,18 @@
+import { useTranslation } from 'react-i18next'
 import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
-import { technologies } from '../data/technologies'
+import { technologyIcons } from '../data/technologies'
+
+interface TechItem {
+  name: string
+  description: string
+}
 
 export function TechStack() {
-  const words = technologies.map((tech) => tech.name)
+  const { t } = useTranslation()
+  const items = t('techStack.items', { returnObjects: true }) as TechItem[]
+  const words = items.map((tech) => tech.name)
   const loop = [...words, ...words]
 
   return (
@@ -12,9 +20,9 @@ export function TechStack() {
       <Container>
         <SectionHeading
           index="02"
-          eyebrow="Tech Stack"
-          title="Tools I reach for"
-          description="A pragmatic set of technologies, chosen for reliability and developer experience."
+          eyebrow={t('techStack.eyebrow')}
+          title={t('techStack.title')}
+          description={t('techStack.description')}
         />
       </Container>
 
@@ -36,12 +44,15 @@ export function TechStack() {
 
       <Container>
         <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.14em] text-ink-faint">
-          {technologies.map((tech) => (
-            <li key={tech.name} className="inline-flex items-center gap-2">
-              <tech.icon className="size-3.5 text-accent" strokeWidth={1.5} />
-              {tech.description}
-            </li>
-          ))}
+          {items.map((tech) => {
+            const Icon = technologyIcons[tech.name]
+            return (
+              <li key={tech.name} className="inline-flex items-center gap-2">
+                {Icon && <Icon className="size-3.5 text-accent" strokeWidth={1.5} />}
+                {tech.description}
+              </li>
+            )
+          })}
         </ul>
       </Container>
     </MotionSection>
