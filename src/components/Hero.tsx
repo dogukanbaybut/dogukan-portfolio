@@ -5,6 +5,7 @@ import { ArrowDown } from 'lucide-react'
 import { Container } from './ui/Container'
 import { AnimatedButton } from './ui/AnimatedButton'
 import { ScrambleText } from './ui/ScrambleText'
+import { EnTerms } from './ui/EnTerms'
 
 const focusWords = ['React Native', 'React.js', 'Firebase', 'TypeScript']
 
@@ -65,7 +66,7 @@ export function Hero() {
       <motion.div style={{ opacity: fade }} className="relative">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
-            <span>{t('hero.role')}</span>
+            <span><EnTerms text={t('hero.role')} /></span>
             <span className="inline-flex items-center gap-2">
               <span className="relative flex size-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />

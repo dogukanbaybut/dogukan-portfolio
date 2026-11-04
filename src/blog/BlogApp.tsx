@@ -6,6 +6,7 @@ import { Container } from '../components/ui/Container'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { posts, formatDate, type BlogPost } from './posts'
+import { EnTerms } from '../components/ui/EnTerms'
 
 function PostMeta({ post }: { post: BlogPost }) {
   return (
@@ -74,7 +75,7 @@ function BlogPostPage({ post }: { post: BlogPost }) {
                 key={tag}
                 className="border border-border px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted"
               >
-                {tag}
+                <EnTerms text={tag} />
               </span>
             ))}
           </div>

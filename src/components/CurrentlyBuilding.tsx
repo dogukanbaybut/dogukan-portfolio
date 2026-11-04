@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Container } from './ui/Container'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
+import { EnTerms } from './ui/EnTerms'
 
 export function CurrentlyBuilding() {
   const { t } = useTranslation()
@@ -31,7 +32,7 @@ export function CurrentlyBuilding() {
           {focuses.map((focus, i) => (
             <span key={focus} className="inline-flex items-center gap-2">
               {i > 0 && <span className="text-accent">/</span>}
-              {focus}
+              <EnTerms text={focus} />
             </span>
           ))}
         </motion.div>

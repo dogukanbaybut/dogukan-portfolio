@@ -3,6 +3,7 @@ import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { technologyIcons } from '../data/technologies'
+import { EnTerms } from './ui/EnTerms'
 
 interface TechItem {
   name: string
@@ -27,7 +28,7 @@ export function TechStack() {
       </Container>
 
       <div className="relative mt-16 w-full overflow-hidden border-y border-border py-6 mask-fade-x">
-        <div className="flex w-max animate-marquee items-center gap-10 hover:[animation-play-state:paused]">
+        <div lang="en" className="flex w-max animate-marquee items-center gap-10 hover:[animation-play-state:paused]">
           {loop.map((name, i) => (
             <span
               key={`${name}-${i}`}
@@ -49,7 +50,7 @@ export function TechStack() {
             return (
               <li key={tech.name} className="inline-flex items-center gap-2">
                 {Icon && <Icon className="size-3.5 text-accent" strokeWidth={1.5} />}
-                {tech.description}
+                <EnTerms text={tech.description} />
               </li>
             )
           })}

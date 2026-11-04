@@ -6,6 +6,7 @@ import { GithubIcon } from './ui/BrandIcons'
 import { TechBadge } from './ui/TechBadge'
 import { useTilt } from '../hooks/useTilt'
 import type { Project } from '../data/projects'
+import { EnTerms } from './ui/EnTerms'
 
 function ImageScroller({ images, name }: { images: string[]; name: string }) {
   const [index, setIndex] = useState(0)
@@ -121,7 +122,7 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
           {project.name}
         </h3>
         <p className="mt-3 font-mono text-xs uppercase tracking-[0.16em] text-accent">
-          {project.category}
+          <EnTerms text={project.category} />
         </p>
 
         <p className="mt-6 text-sm leading-relaxed text-ink-muted sm:text-base">
