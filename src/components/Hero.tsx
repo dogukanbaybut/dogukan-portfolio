@@ -80,6 +80,8 @@ export function Hero() {
       <motion.div style={{ y: headlineY }} className="relative flex flex-1 flex-col justify-center">
         <div className="w-full">
           <h1 className="select-none whitespace-nowrap font-display font-medium uppercase leading-[0.86] tracking-tighter text-ink [font-size:clamp(3.4rem,13vw,10.5rem)]">
+            {/* Visually hidden: gives search engines and screen readers who/what this page is about. */}
+            <span className="sr-only">Doğukan Baybut — Full Stack Developer (React &amp; React Native): </span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}

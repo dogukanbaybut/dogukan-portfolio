@@ -1,43 +1,81 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Doğukan Baybut</title>
+    <title>Doğukan Baybut — Full Stack Developer | React &amp; React Native</title>
     <meta
       name="description"
-      content="Doğukan Baybut is a Computer Engineering student and Mobile App Developer specializing in React Native, building user-focused, high-performance, scalable mobile applications."
+      content="Doğukan Baybut — Mersin'de Full Stack Developer. React, React Native ve TypeScript ile kullanıcı odaklı, ölçeklenebilir web ve mobil uygulamalar geliştiriyorum."
     />
+    <meta name="author" content="Doğukan Baybut" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://dogukanbaybut.dev/" />
 
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Doğukan Baybut — Mobile App Developer (React Native)"
-    />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Doğukan Baybut" />
+    <meta property="og:title" content="Doğukan Baybut — Full Stack Developer (React &amp; React Native)" />
     <meta
       property="og:description"
-      content="Building mobile products that actually work — React Native, Flutter and modern mobile architecture."
+      content="React, React Native ve TypeScript ile uçtan uca web ve mobil ürünler geliştiren Full Stack Developer."
     />
     <meta property="og:url" content="https://dogukanbaybut.dev/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Doğukan Baybut — Mobile App Developer (React Native)"
-    />
+    <meta name="twitter:title" content="Doğukan Baybut — Full Stack Developer (React &amp; React Native)" />
     <meta
       name="twitter:description"
-      content="Building mobile products that actually work — React Native, Flutter and modern mobile architecture."
+      content="React, React Native ve TypeScript ile uçtan uca web ve mobil ürünler geliştiren Full Stack Developer."
     />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://dogukanbaybut.dev/#person",
+            "name": "Doğukan Baybut",
+            "url": "https://dogukanbaybut.dev/",
+            "jobTitle": "Full Stack Developer",
+            "worksFor": { "@type": "Organization", "name": "Xenovale Technology" },
+            "address": { "@type": "PostalAddress", "addressLocality": "Mersin", "addressCountry": "TR" },
+            "alumniOf": [
+              { "@type": "CollegeOrUniversity", "name": "Karamanoğlu Mehmetbey Üniversitesi" },
+              { "@type": "CollegeOrUniversity", "name": "Mersin Üniversitesi" }
+            ],
+            "knowsAbout": ["React", "React Native", "TypeScript", "JavaScript", "Full Stack Development", "Mobile App Development", "Firebase", "Flutter"],
+            "sameAs": ["https://github.com/dogukanbaybut", "https://www.linkedin.com/in/do%C4%9Fukan-baybut-a47430229/"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://dogukanbaybut.dev/#website",
+            "name": "Doğukan Baybut",
+            "url": "https://dogukanbaybut.dev/",
+            "inLanguage": ["tr-TR", "en"],
+            "publisher": { "@id": "https://dogukanbaybut.dev/#person" }
+          }
+        ]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load fonts without blocking first paint: preload, then switch to a stylesheet once downloaded. -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
