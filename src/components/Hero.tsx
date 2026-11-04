@@ -6,6 +6,7 @@ import { Container } from './ui/Container'
 import { AnimatedButton } from './ui/AnimatedButton'
 import { ScrambleText } from './ui/ScrambleText'
 import { EnTerms } from './ui/EnTerms'
+import { useSectionId } from '../lib/sections'
 
 const focusWords = ['React Native', 'React.js', 'Firebase', 'TypeScript']
 
@@ -38,6 +39,9 @@ function CyclingFocus() {
 }
 
 export function Hero() {
+  const topId = useSectionId('top')
+  const projectsId = useSectionId('projects')
+  const contactId = useSectionId('contact')
   const reduceMotion = useReducedMotion()
   const { t, i18n } = useTranslation()
   const lang = i18n.language
@@ -54,7 +58,7 @@ export function Hero() {
 
   return (
     <section
-      id="top"
+      id={topId}
       ref={sectionRef}
       className="relative flex min-h-[100svh] flex-col overflow-hidden pt-32 pb-16"
     >
@@ -122,10 +126,10 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <AnimatedButton href="#projects" variant="primary" cursorLabel={t('cursor.view')}>
+              <AnimatedButton href={`#${projectsId}`} variant="primary" cursorLabel={t('cursor.view')}>
                 {t('hero.viewWork')}
               </AnimatedButton>
-              <AnimatedButton href="#contact" variant="ghost" cursorLabel={t('cursor.talk')}>
+              <AnimatedButton href={`#${contactId}`} variant="ghost" cursorLabel={t('cursor.talk')}>
                 {t('hero.contact')}
               </AnimatedButton>
             </div>

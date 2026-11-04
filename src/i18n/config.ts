@@ -2,6 +2,7 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import en from '../locales/en/translation.json'
 import tr from '../locales/tr/translation.json'
+import { syncHashToLanguage } from '../lib/sections'
 
 export type Lang = 'en' | 'tr'
 
@@ -28,6 +29,7 @@ i18n.use(initReactI18next).init({
 
 i18n.on('languageChanged', (lng) => {
   document.documentElement.lang = lng
+  syncHashToLanguage(lng)
   window.localStorage.setItem(STORAGE_KEY, lng)
 })
 

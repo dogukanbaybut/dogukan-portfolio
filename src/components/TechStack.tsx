@@ -4,6 +4,7 @@ import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { technologyIcons } from '../data/technologies'
 import { EnTerms } from './ui/EnTerms'
+import { useSectionId } from '../lib/sections'
 
 interface TechItem {
   name: string
@@ -11,13 +12,14 @@ interface TechItem {
 }
 
 export function TechStack() {
+  const sectionId = useSectionId('skills')
   const { t } = useTranslation()
   const items = t('techStack.items', { returnObjects: true }) as TechItem[]
   const words = items.map((tech) => tech.name)
   const loop = [...words, ...words]
 
   return (
-    <MotionSection id="tech-stack">
+    <MotionSection id={sectionId}>
       <Container>
         <SectionHeading
           index="02"

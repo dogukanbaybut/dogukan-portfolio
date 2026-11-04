@@ -5,6 +5,7 @@ import { MotionSection } from './ui/MotionSection'
 import { ProjectChapter } from './ProjectChapter'
 import { projectsMeta } from '../data/projects'
 import type { Project } from '../data/projects'
+import { useSectionId } from '../lib/sections'
 
 interface ProjectText {
   name: string
@@ -14,12 +15,13 @@ interface ProjectText {
 }
 
 export function Projects() {
+  const sectionId = useSectionId('projects')
   const { t } = useTranslation()
   const texts = t('projects.items', { returnObjects: true }) as ProjectText[]
   const items: Project[] = texts.map((text, i) => ({ ...text, ...projectsMeta[i] }))
 
   return (
-    <MotionSection id="projects">
+    <MotionSection id={sectionId}>
       <Container>
         <SectionHeading
           index="03"

@@ -4,6 +4,7 @@ import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
+import { useSectionId } from '../lib/sections'
 
 interface ExperienceItem {
   company: string
@@ -14,11 +15,12 @@ interface ExperienceItem {
 }
 
 export function Experience() {
+  const sectionId = useSectionId('experience')
   const { t } = useTranslation()
   const items = t('experience.items', { returnObjects: true }) as ExperienceItem[]
 
   return (
-    <MotionSection id="experience">
+    <MotionSection id={sectionId}>
       <Container>
         <SectionHeading index="04" eyebrow={t('experience.eyebrow')} title={t('experience.title')} />
 

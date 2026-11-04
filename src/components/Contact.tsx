@@ -7,8 +7,10 @@ import { EmailCTA } from './ui/EmailCTA'
 import { ScrambleText } from './ui/ScrambleText'
 import { GithubIcon, LinkedinIcon } from './ui/BrandIcons'
 import { fadeUp } from './ui/motionVariants'
+import { useSectionId } from '../lib/sections'
 
 export function Contact() {
+  const sectionId = useSectionId('contact')
   const { t, i18n } = useTranslation()
   const lang = i18n.language
   const headline = t('contact.headline', { returnObjects: true }) as string[]
@@ -25,7 +27,7 @@ export function Contact() {
   ]
 
   return (
-    <MotionSection id="contact" stagger={0.12}>
+    <MotionSection id={sectionId} stagger={0.12}>
       <Container>
         <motion.p
           variants={fadeUp}

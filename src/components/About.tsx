@@ -4,6 +4,7 @@ import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
+import { useSectionId } from '../lib/sections'
 
 interface Facet {
   n: string
@@ -12,12 +13,13 @@ interface Facet {
 }
 
 export function About() {
+  const sectionId = useSectionId('about')
   const { t } = useTranslation()
   const languages = t('about.languages', { returnObjects: true }) as string[]
   const facets = t('about.facets', { returnObjects: true }) as Facet[]
 
   return (
-    <MotionSection id="about">
+    <MotionSection id={sectionId}>
       <Container>
         <SectionHeading index="01" eyebrow={t('about.eyebrow')} title={t('about.title')} />
 

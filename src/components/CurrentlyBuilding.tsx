@@ -4,13 +4,15 @@ import { Container } from './ui/Container'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
 import { EnTerms } from './ui/EnTerms'
+import { useSectionId } from '../lib/sections'
 
 export function CurrentlyBuilding() {
+  const sectionId = useSectionId('focus')
   const { t } = useTranslation()
   const focuses = t('currentlyBuilding.focuses', { returnObjects: true }) as string[]
 
   return (
-    <MotionSection id="focus">
+    <MotionSection id={sectionId}>
       <Container>
         <motion.p
           variants={fadeUp}

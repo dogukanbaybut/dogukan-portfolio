@@ -4,6 +4,7 @@ import { Container } from './ui/Container'
 import { SectionHeading } from './ui/SectionHeading'
 import { MotionSection } from './ui/MotionSection'
 import { fadeUp } from './ui/motionVariants'
+import { useSectionId } from '../lib/sections'
 
 interface EducationItem {
   school: string
@@ -15,11 +16,12 @@ interface EducationItem {
 }
 
 export function Education() {
+  const sectionId = useSectionId('education')
   const { t } = useTranslation()
   const items = t('education.items', { returnObjects: true }) as EducationItem[]
 
   return (
-    <MotionSection id="education">
+    <MotionSection id={sectionId}>
       <Container>
         <SectionHeading index="05" eyebrow={t('education.eyebrow')} title={t('education.title')} />
 

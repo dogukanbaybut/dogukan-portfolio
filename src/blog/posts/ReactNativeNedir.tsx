@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
       </p>
       <p>
         Bir mobil uygulama fikriniz mi var veya React Native ile ilgili sorunuz mu? Bana{' '}
-        <a href="/#contact">iletişim</a> bölümünden ulaşabilirsiniz.
+        <a href="/#iletisim">iletişim</a> bölümünden ulaşabilirsiniz.
       </p>
     </>
   )

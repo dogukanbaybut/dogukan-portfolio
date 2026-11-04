@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { Container } from './ui/Container'
 import { Magnetic } from './ui/Magnetic'
 import { cn } from '../lib/utils'
+import { sectionId, type SectionKey } from '../lib/sections'
 
 /** `homeHref` prefixes section anchors so the navbar also works on pages other than the home page (e.g. the blog). */
 export function Navbar({ homeHref = '' }: { homeHref?: string } = {}) {
@@ -13,14 +14,16 @@ export function Navbar({ homeHref = '' }: { homeHref?: string } = {}) {
   const { t, i18n } = useTranslation()
   const lang = i18n.language
 
+  const anchor = (key: SectionKey) => `${homeHref}#${sectionId(key, lang)}`
+
   const links = [
-    { label: t('navbar.links.about'), href: '#about' },
-    { label: t('navbar.links.skills'), href: '#tech-stack' },
-    { label: t('navbar.links.projects'), href: '#projects' },
-    { label: t('navbar.links.experience'), href: '#experience' },
-    { label: t('navbar.links.contact'), href: '#contact' },
-  ].map((l) => ({ ...l, href: homeHref + l.href }))
-  links.splice(4, 0, { label: t('navbar.links.blog'), href: '/blog/' })
+    { label: t('navbar.links.about'), href: anchor('about') },
+    { label: t('navbar.links.skills'), href: anchor('skills') },
+    { label: t('navbar.links.projects'), href: anchor('projects') },
+    { label: t('navbar.links.experience'), href: anchor('experience') },
+    { label: t('navbar.links.blog'), href: '/blog/' },
+    { label: t('navbar.links.contact'), href: anchor('contact') },
+  ]
 
   const toggleLang = () => i18n.changeLanguage(lang === 'en' ? 'tr' : 'en')
   const langOrder = lang === 'tr' ? (['tr', 'en'] as const) : (['en', 'tr'] as const)
@@ -41,7 +44,7 @@ export function Navbar({ homeHref = '' }: { homeHref?: string } = {}) {
     >
       <Container className="flex items-center justify-between py-5">
         <a
-          href={`${homeHref}#top`}
+          href={anchor('top')}
           data-cursor={t('cursor.top')}
           className="font-mono text-sm font-medium tracking-tight text-ink"
         >
@@ -76,7 +79,7 @@ export function Navbar({ homeHref = '' }: { homeHref?: string } = {}) {
 
           <Magnetic className="inline-block" strength={0.4}>
             <a
-              href={`${homeHref}#contact`}
+              href={anchor('contact')}
               data-cursor={t('cursor.talk')}
               className="border-b border-ink-faint pb-0.5 font-mono text-xs uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent"
             >
@@ -131,7 +134,7 @@ export function Navbar({ homeHref = '' }: { homeHref?: string } = {}) {
                 </a>
               ))}
               <a
-                href={`${homeHref}#contact`}
+                href={anchor('contact')}
                 onClick={() => setOpen(false)}
                 className="mt-2 border-t border-border px-1 py-3 font-mono text-sm uppercase tracking-[0.1em] text-ink"
               >
