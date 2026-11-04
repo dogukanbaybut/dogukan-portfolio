@@ -45,7 +45,7 @@ export function Navbar({ homeHref = '' }: { homeHref?: string } = {}) {
           data-cursor={t('cursor.top')}
           className="font-mono text-sm font-medium tracking-tight text-ink"
         >
-          doğukan<span className="text-accent">.</span>baybut
+          dogukan<span className="text-accent">.</span>baybut
         </a>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
