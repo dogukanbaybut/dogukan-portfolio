@@ -69,7 +69,7 @@ export function EmailCTA() {
         onMouseLeave={handleLeave}
         style={{ x: springX, y: springY }}
         data-cursor={t('cursor.email')}
-        className="group inline-flex max-w-full items-center gap-3 font-display text-2xl font-medium leading-tight tracking-tight text-ink transition-colors duration-300 hover:text-accent sm:text-4xl lg:text-5xl"
+        className="group inline-flex max-w-full items-center gap-3 font-display text-xl font-medium leading-tight tracking-tight text-ink transition-colors duration-300 hover:text-accent min-[400px]:text-2xl sm:text-4xl lg:text-5xl"
       >
         <span className="max-w-full border-b-2 border-ink-faint pb-1 [overflow-wrap:anywhere] transition-colors duration-300 group-hover:border-accent">
           {EMAIL}

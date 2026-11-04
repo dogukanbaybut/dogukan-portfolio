@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArrowDown } from 'lucide-react'
 import { Container } from './ui/Container'
@@ -84,7 +84,10 @@ export function Hero() {
 
       <motion.div style={{ y: headlineY }} className="relative flex flex-1 flex-col justify-center">
         <div className="w-full">
-          <h1 className="select-none whitespace-nowrap font-display font-medium uppercase leading-[0.86] tracking-tighter text-ink [font-size:clamp(3.4rem,13vw,10.5rem)]">
+          <h1
+            style={{ '--hero-fit': t('hero.headlineFit') } as CSSProperties}
+            className="hero-headline select-none whitespace-nowrap font-display font-medium uppercase leading-[0.96] tracking-tighter text-ink"
+          >
             {/* Visually hidden: gives search engines and screen readers who/what this page is about. */}
             <span className="sr-only">Doğukan Baybut — Full Stack Developer (React &amp; React Native): </span>
             <motion.span

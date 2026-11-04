@@ -22,6 +22,8 @@ const EN_TERMS = [
   'Flutter',
   'Claude',
   'Expo',
+  'GitHub',
+  'LinkedIn',
   'Frontend',
   'Backend',
   'Developer',

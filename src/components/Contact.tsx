@@ -8,6 +8,7 @@ import { ScrambleText } from './ui/ScrambleText'
 import { GithubIcon, LinkedinIcon } from './ui/BrandIcons'
 import { fadeUp } from './ui/motionVariants'
 import { useSectionId } from '../lib/sections'
+import { EnTerms } from './ui/EnTerms'
 
 export function Contact() {
   const sectionId = useSectionId('contact')
@@ -39,13 +40,13 @@ export function Contact() {
         <div className="mt-8 max-w-4xl">
           <motion.h2
             variants={fadeUp}
-            className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.88] tracking-tighter text-ink sm:text-[6.5rem] lg:text-[7.5rem]"
+            className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.98] tracking-tight text-ink sm:text-[6.5rem] lg:text-[7.5rem]"
           >
             <ScrambleText key={lang} text={headline[0]} delay={150} />
           </motion.h2>
           <motion.h2
             variants={fadeUp}
-            className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.88] tracking-tighter text-outline-accent sm:text-[6.5rem] lg:text-[7.5rem]"
+            className="text-balance font-display text-[15vw] font-medium uppercase leading-[0.98] tracking-tight text-outline-accent sm:text-[6.5rem] lg:text-[7.5rem]"
           >
             <ScrambleText key={lang} text={headline[1]} delay={300} />
           </motion.h2>
@@ -96,7 +97,7 @@ export function Contact() {
                 className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors duration-300 hover:text-ink"
               >
                 <social.icon className="size-3.5" />
-                {social.label}
+                <EnTerms text={social.label} />
                 <motion.span
                   className="inline-flex"
                   initial={{ x: 0, y: 0 }}

@@ -228,3 +228,23 @@
     color: var(--color-ink);
   }
 }
+
+/*
+ * Hero headline: sized so its longest line always fits the viewport. `--hero-fit` is that line's
+ * width in em (plus a little slack), set per language in the translation files (hero.headlineFit).
+ * `--hero-pad` mirrors the headline's left padding (pl-6 / sm:pl-10 / lg:pl-16) and is kept on the right too.
+ */
+.hero-headline {
+  --hero-pad: 1.5rem;
+  font-size: min(10.5rem, calc((100vw - 2 * var(--hero-pad)) / var(--hero-fit, 9)));
+}
+@media (min-width: 40rem) {
+  .hero-headline {
+    --hero-pad: 2.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  .hero-headline {
+    --hero-pad: 4rem;
+  }
+}
