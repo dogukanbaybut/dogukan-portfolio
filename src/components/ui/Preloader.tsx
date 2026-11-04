@@ -1,14 +1,18 @@
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { useEffect, useState } from 'react'
+import { introAlreadyPlayed, markIntroPlayed } from '../../lib/intro'
 
 export function Preloader() {
   const reduceMotion = useReducedMotion()
-  const [loading, setLoading] = useState(() => !reduceMotion)
+  const [loading, setLoading] = useState(() => !reduceMotion && !introAlreadyPlayed)
 
   useEffect(() => {
     if (!loading) return
     document.body.style.overflow = 'hidden'
-    const timer = setTimeout(() => setLoading(false), 550)
+    const timer = setTimeout(() => {
+      setLoading(false)
+      markIntroPlayed()
+    }, 550)
     return () => clearTimeout(timer)
   }, [loading])
 
@@ -18,7 +22,7 @@ export function Preloader() {
     }
   }, [loading])
 
-  if (reduceMotion) return null
+  if (reduceMotion || introAlreadyPlayed) return null
 
   return (
     <AnimatePresence>

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { ReactLenis } from 'lenis/react'
 import i18n from './i18n/config'
 import { syncHashToLanguage } from './lib/sections'
+import { introAlreadyPlayed } from './lib/intro'
 import { CustomCursor } from './components/ui/CustomCursor'
 import { Preloader } from './components/ui/Preloader'
 import { ScrollProgress } from './components/ui/ScrollProgress'
@@ -18,11 +19,11 @@ import { Footer } from './components/Footer'
 
 function App() {
   // Deep links: accept a section anchor in either language (or a legacy one), rewrite it to the
-  // active language and scroll there once the preloader has finished.
+  // active language and scroll there (after the preloader, when it plays).
   useEffect(() => {
     const id = syncHashToLanguage(i18n.language)
     if (!id) return
-    const timer = setTimeout(() => document.getElementById(id)?.scrollIntoView(), 700)
+    const timer = setTimeout(() => document.getElementById(id)?.scrollIntoView(), introAlreadyPlayed ? 50 : 700)
     return () => clearTimeout(timer)
   }, [])
 
