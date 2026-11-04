@@ -6,7 +6,8 @@ import { Container } from './ui/Container'
 import { Magnetic } from './ui/Magnetic'
 import { cn } from '../lib/utils'
 
-export function Navbar() {
+/** `homeHref` prefixes section anchors so the navbar also works on pages other than the home page (e.g. the blog). */
+export function Navbar({ homeHref = '' }: { homeHref?: string } = {}) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { t, i18n } = useTranslation()
@@ -18,7 +19,8 @@ export function Navbar() {
     { label: t('navbar.links.projects'), href: '#projects' },
     { label: t('navbar.links.experience'), href: '#experience' },
     { label: t('navbar.links.contact'), href: '#contact' },
-  ]
+  ].map((l) => ({ ...l, href: homeHref + l.href }))
+  links.splice(4, 0, { label: t('navbar.links.blog'), href: '/blog/' })
 
   const toggleLang = () => i18n.changeLanguage(lang === 'en' ? 'tr' : 'en')
   const langOrder = lang === 'tr' ? (['tr', 'en'] as const) : (['en', 'tr'] as const)
@@ -39,7 +41,7 @@ export function Navbar() {
     >
       <Container className="flex items-center justify-between py-5">
         <a
-          href="#top"
+          href={`${homeHref}#top`}
           data-cursor={t('cursor.top')}
           className="font-mono text-sm font-medium tracking-tight text-ink"
         >
@@ -74,7 +76,7 @@ export function Navbar() {
 
           <Magnetic className="inline-block" strength={0.4}>
             <a
-              href="#contact"
+              href={`${homeHref}#contact`}
               data-cursor={t('cursor.talk')}
               className="border-b border-ink-faint pb-0.5 font-mono text-xs uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent"
             >
@@ -129,7 +131,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href={`${homeHref}#contact`}
                 onClick={() => setOpen(false)}
                 className="mt-2 border-t border-border px-1 py-3 font-mono text-sm uppercase tracking-[0.1em] text-ink"
               >
