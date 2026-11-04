@@ -146,8 +146,9 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
           ))}
         </div>
 
+        {(project.githubUrl || project.liveUrl) && (
         <div className="mt-8 flex items-center gap-6">
-          {project.githubUrl ? (
+          {project.githubUrl && (
             <a
               href={project.githubUrl}
               target="_blank"
@@ -157,10 +158,6 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
             >
               <GithubIcon className="size-4" /> {t('projects.code')}
             </a>
-          ) : (
-            <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-ink-faint">
-              <GithubIcon className="size-4" /> {t('projects.codeComingSoon')}
-            </span>
           )}
           {project.liveUrl && (
             <a
@@ -174,6 +171,7 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
             </a>
           )}
         </div>
+        )}
       </div>
 
       <div className="lg:col-span-8">
