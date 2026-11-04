@@ -7,13 +7,16 @@ import { TechBadge } from './ui/TechBadge'
 import { useTilt } from '../hooks/useTilt'
 import type { Project } from '../data/projects'
 import { EnTerms } from './ui/EnTerms'
+import { Lightbox } from './ui/Lightbox'
 
 function ImageScroller({ images, name }: { images: string[]; name: string }) {
   const [index, setIndex] = useState(0)
   const [offset, setOffset] = useState(0)
   const [dragging, setDragging] = useState(false)
+  const [lightbox, setLightbox] = useState<number | null>(null)
   const trackRef = useRef<HTMLDivElement>(null)
   const startX = useRef(0)
+  const { t } = useTranslation()
 
   const goTo = (i: number) => setIndex(Math.max(0, Math.min(images.length - 1, i)))
 
@@ -37,6 +40,8 @@ function ImageScroller({ images, name }: { images: string[]; name: string }) {
     const threshold = Math.min(60, width * 0.15)
     if (dx < -threshold) goTo(index + 1)
     else if (dx > threshold) goTo(index - 1)
+    // Barely moved: it was a click, not a swipe — open the photo full screen.
+    else if (Math.abs(dx) < 6) setLightbox(index)
     setOffset(0)
     setDragging(false)
   }
@@ -49,7 +54,8 @@ function ImageScroller({ images, name }: { images: string[]; name: string }) {
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
-        className={`flex h-full touch-pan-y select-none ${dragging ? 'cursor-grabbing' : 'cursor-grab transition-transform duration-500 ease-out'}`}
+        data-cursor={t('cursor.view')}
+        className={`flex h-full touch-pan-y select-none ${dragging ? 'cursor-grabbing' : 'cursor-zoom-in transition-transform duration-500 ease-out'}`}
         style={{ transform: `translateX(calc(${-index * 100}% + ${offset}px))` }}
       >
         {images.map((src, idx) => (
@@ -95,6 +101,17 @@ function ImageScroller({ images, name }: { images: string[]; name: string }) {
           />
         ))}
       </div>
+
+      <Lightbox
+        images={images}
+        index={lightbox}
+        name={name}
+        onClose={() => setLightbox(null)}
+        onChange={(i) => {
+          setLightbox(i)
+          setIndex(i)
+        }}
+      />
     </div>
   )
 }
