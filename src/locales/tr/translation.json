@@ -25,9 +25,9 @@
   "about": {
     "eyebrow": "Vizyon & Misyon",
     "title": "Ben kimim",
-    "vision": "Vizyonum; React ve React Native ile kullanıcı odaklı, yüksek performanslı ve ölçeklenebilir web ve mobil uygulamalar geliştiren, gelişen teknolojileri yakından takip eden yetkin bir Frontend & Mobile Developer olmak.",
+    "vision": "Vizyonum; frontend'den backend'e uçtan uca kullanıcı odaklı, yüksek performanslı ve ölçeklenebilir web ve mobil ürünler geliştiren, gelişen teknolojileri yakından takip eden yetkin bir Full Stack Developer olmak.",
     "missionLabel": "Misyon",
-    "mission": "React ve React Native ekosistemlerindeki bilgi ve deneyimimi sürekli geliştirerek modern, güvenilir ve sürdürülebilir ürünler ortaya koymak; gerçek kullanıcılar için gerçek çözümler ve dahil olduğum her projeye teknik değer katmak.",
+    "mission": "React ve React Native ile kurulan arayüzlerden sağlam API'lere ve iyi tasarlanmış veri katmanlarına kadar bir ürünün her katmanında bilgi ve deneyimimi sürekli geliştirerek modern, güvenilir ve sürdürülebilir ürünler ortaya koymak; gerçek kullanıcılar için gerçek çözümler üretmek ve dahil olduğum her projeye teknik değer katmak.",
     "languages": ["TR — Anadil", "EN — B1"],
     "facets": [
       {
@@ -92,8 +92,15 @@
     "items": [
       {
         "company": "Xenovale Technology",
+        "role": "Full Stack Developer",
+        "period": "Kas 2026 — Devam ediyor",
+        "location": "Mersin, Türkiye",
+        "description": "Şirketin web ve mobil ürünlerinde uçtan uca geliştirme yapıyorum; frontend arayüzlerinden backend servislerine ve veritabanı katmanına kadar tüm süreçte görev alıyorum."
+      },
+      {
+        "company": "Xenovale Technology",
         "role": "Mobil Geliştirici (Stajyer)",
-        "period": "Haz 2026 — Devam ediyor",
+        "period": "Haz 2026 — Eki 2026",
         "location": "Mersin, Türkiye",
         "description": "Şirketin web ve mobil uygulama geliştirme süreçlerine katkı sağlıyorum. Proje ihtiyaçlarına göre frontend geliştirme, arayüz iyileştirmeleri ve teknik görevler üzerinde çalışırken, modern web ve mobil teknolojilerdeki uzmanlığımı geliştirmek için bireysel yazılım projeleri de üretiyorum."
       },
@@ -136,10 +143,10 @@
   },
   "currentlyBuilding": {
     "eyebrow": "06 — Şu An Üzerinde Çalıştıklarım",
-    "heading": "React ve React Native uzmanlığımı derinleştiriyor, ölçeklenebilir web ve mobil ürünler için Firebase tabanlı mimarileri araştırıyorum.",
+    "heading": "Xenovale Technology'de Full Stack Developer olarak frontend'den backend'e uçtan uca ölçeklenebilir web ve mobil ürünler geliştiriyorum.",
     "focuses": [
       "React & React Native Ekosistemleri",
-      "Firebase & Gerçek Zamanlı Mimariler",
+      "Full Stack Geliştirme & API Tasarımı",
       "Çoklu Platform Performansı",
       "Modern Web & Mobil UX"
     ]

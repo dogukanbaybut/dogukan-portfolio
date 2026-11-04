@@ -25,9 +25,9 @@
   "about": {
     "eyebrow": "Vision & Mission",
     "title": "Who I am",
-    "vision": "My vision is to become a skilled Frontend & Mobile Developer, working across React and React Native to build user-focused, high-performance and scalable web and mobile applications — while staying current with emerging technologies.",
+    "vision": "My vision is to become a skilled Full Stack Developer, building user-focused, high-performance and scalable web and mobile products end to end — from frontend to backend — while staying current with emerging technologies.",
     "missionLabel": "Mission",
-    "mission": "To continuously grow my knowledge and experience across the React and React Native ecosystems to produce modern, reliable and maintainable products — delivering real solutions for real users, and technical value to every project I'm part of.",
+    "mission": "To continuously grow my knowledge and experience across every layer of a product — polished interfaces with React and React Native, solid APIs and well-designed data layers — to deliver modern, reliable and maintainable solutions: real solutions for real users, and technical value to every project I'm part of.",
     "languages": ["TR — Native", "EN — B1"],
     "facets": [
       {
@@ -92,8 +92,15 @@
     "items": [
       {
         "company": "Xenovale Technology",
+        "role": "Full Stack Developer",
+        "period": "Nov 2026 — Present",
+        "location": "Mersin, Türkiye",
+        "description": "Building the company's web and mobile products end to end — from frontend interfaces to backend services and the database layer."
+      },
+      {
+        "company": "Xenovale Technology",
         "role": "Mobile Developer (Intern)",
-        "period": "Jun 2026 — Present",
+        "period": "Jun 2026 — Oct 2026",
         "location": "Mersin, Türkiye",
         "description": "Contributing to the company's web and mobile application development. Working on frontend development, UI improvements and technical tasks driven by project needs, while building individual software projects to grow expertise in modern web and mobile technologies."
       },
@@ -136,10 +143,10 @@
   },
   "currentlyBuilding": {
     "eyebrow": "06 — Currently Building",
-    "heading": "Deepening my React and React Native expertise and exploring Firebase-backed architectures for scalable web and mobile products.",
+    "heading": "Building scalable web and mobile products end to end — from frontend to backend — as a Full Stack Developer at Xenovale Technology.",
     "focuses": [
       "React & React Native Ecosystems",
-      "Firebase & Realtime Architectures",
+      "Full Stack Development & API Design",
       "Cross-Platform Performance",
       "Modern Web & Mobile UX"
     ]
