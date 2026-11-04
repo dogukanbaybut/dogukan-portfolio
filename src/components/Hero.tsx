@@ -130,6 +130,8 @@ export function Hero() {
         </Container>
       </motion.div>
 
+      {/* Keep a gap larger than the headline's max parallax offset (60px) so they never overlap. */}
+      <motion.div style={{ opacity: fade }} className="relative mt-16">
       <Container>
         <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.18em] text-ink-faint">
           <span>{t('hero.coordinates')}</span>
@@ -142,6 +144,7 @@ export function Hero() {
           </motion.span>
         </div>
       </Container>
+      </motion.div>
     </section>
   )
 }
