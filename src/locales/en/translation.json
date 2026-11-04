@@ -68,6 +68,8 @@
       { "name": "TypeScript", "description": "Typed, reliable code" },
       { "name": "JavaScript", "description": "The web, natively" },
       { "name": "Firebase", "description": "Realtime backend & auth" },
+      { "name": "PostgreSQL", "description": "Relational database design" },
+      { "name": "ABP Framework", "description": "Modular .NET backend" },
       { "name": "HTML5", "description": "Semantic structure" },
       { "name": "Claude", "description": "AI-assisted development" },
       { "name": "CSS", "description": "Styling & layout" }

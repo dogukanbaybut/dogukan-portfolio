@@ -68,6 +68,8 @@
       { "name": "TypeScript", "description": "Tip güvenli, güvenilir kod" },
       { "name": "JavaScript", "description": "Web'in doğal dili" },
       { "name": "Firebase", "description": "Gerçek zamanlı backend ve kimlik doğrulama" },
+      { "name": "PostgreSQL", "description": "İlişkisel veritabanı tasarımı" },
+      { "name": "ABP Framework", "description": ".NET tabanlı modüler backend" },
       { "name": "HTML5", "description": "Anlamsal yapı" },
       { "name": "CSS", "description": "Stil ve düzen" },
       { "name": "Claude", "description": "Yapay zekâ destekli geliştirme" }
