@@ -50,6 +50,11 @@
         "n": "04",
         "title": "Ürün Geliştirme",
         "description": "Sadece kodla değil, ürünün bütünüyle ilgileniyorum."
+      },
+      {
+        "n": "05",
+        "title": "Yapay Zekâ & Claude",
+        "description": "Claude ve Claude Code'u ileri düzeyde kullanıyorum; kod yazma, refactor, code review ve ajan tabanlı iş akışlarıyla geliştirme hızımı katlıyor, yapay zekâyı ürünlere entegre etmeyi araştırıyorum."
       }
     ]
   },
@@ -64,7 +69,8 @@
       { "name": "JavaScript", "description": "Web'in doğal dili" },
       { "name": "Firebase", "description": "Gerçek zamanlı backend ve kimlik doğrulama" },
       { "name": "HTML5", "description": "Anlamsal yapı" },
-      { "name": "CSS", "description": "Stil ve düzen" }
+      { "name": "CSS", "description": "Stil ve düzen" },
+      { "name": "Claude", "description": "Yapay zekâ destekli geliştirme" }
     ]
   },
   "projects": {
@@ -149,7 +155,8 @@
       "React & React Native Ekosistemleri",
       "Full Stack Geliştirme & API Tasarımı",
       "Çoklu Platform Performansı",
-      "Modern Web & Mobil UX"
+      "Modern Web & Mobil UX",
+      "Yapay Zekâ & Claude ile Geliştirme"
     ]
   },
   "contact": {

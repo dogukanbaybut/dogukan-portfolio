@@ -50,6 +50,11 @@
         "n": "04",
         "title": "Product Building",
         "description": "I care about the whole product, not just the code that ships it."
+      },
+      {
+        "n": "05",
+        "title": "AI & Claude",
+        "description": "Advanced Claude and Claude Code user — multiplying my development speed with AI-driven coding, refactoring, code review and agentic workflows, and exploring how to integrate AI into products."
       }
     ]
   },
@@ -64,6 +69,7 @@
       { "name": "JavaScript", "description": "The web, natively" },
       { "name": "Firebase", "description": "Realtime backend & auth" },
       { "name": "HTML5", "description": "Semantic structure" },
+      { "name": "Claude", "description": "AI-assisted development" },
       { "name": "CSS", "description": "Styling & layout" }
     ]
   },
@@ -149,7 +155,8 @@
       "React & React Native Ecosystems",
       "Full Stack Development & API Design",
       "Cross-Platform Performance",
-      "Modern Web & Mobile UX"
+      "Modern Web & Mobile UX",
+      "AI & Claude-Powered Development"
     ]
   },
   "contact": {
