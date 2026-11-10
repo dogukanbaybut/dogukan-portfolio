@@ -59,7 +59,7 @@ function ImageScroller({ images, name }: { images: string[]; name: string }) {
         style={{ transform: `translateX(calc(${-index * 100}% + ${offset}px))` }}
       >
         {images.map((src, idx) => (
-          <div key={src} className="flex h-full w-full flex-none items-center justify-center py-[5%]">
+          <div key={src} className="flex h-full w-full flex-none items-center justify-center pb-9 pt-[5%] sm:py-[5%]">
             <img
               src={src}
               alt={`${name} ${idx + 1}`}
@@ -198,7 +198,7 @@ export function ProjectChapter({ project, order }: { project: Project; order: st
             onMouseMove={hasImages ? undefined : tilt.onMouseMove}
             onMouseLeave={hasImages ? undefined : tilt.onMouseLeave}
             style={{ scale, rotateX: tilt.rotateX, rotateY: tilt.rotateY, transformPerspective: 1000 }}
-            className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-border bg-bg-elevated bg-grid [transform-style:preserve-3d]"
+            className={`relative w-full ${hasImages ? 'aspect-[4/5] sm:aspect-[16/10]' : 'aspect-[16/10]'} overflow-hidden rounded-sm border border-border bg-bg-elevated bg-grid [transform-style:preserve-3d]`}
           >
             <motion.div
               style={{ y: imageY }}
