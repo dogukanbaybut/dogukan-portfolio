@@ -49,13 +49,14 @@ export function About() {
             <motion.div
               key={facet.n}
               variants={fadeUp}
-              className="group grid grid-cols-[3rem_1fr] items-baseline gap-6 border-b border-border py-6 sm:grid-cols-[3rem_14rem_1fr] sm:gap-10"
+              className="group grid grid-cols-[3rem_1fr] items-baseline gap-x-6 gap-y-2 border-b border-border py-6 sm:grid-cols-[3rem_14rem_1fr] sm:gap-10"
             >
               <span className="font-mono text-sm text-ink-faint">{facet.n}</span>
               <h3 className="font-display text-lg font-medium text-ink transition-colors duration-300 group-hover:text-accent">
                 {facet.title}
               </h3>
-              <p className="text-sm leading-relaxed text-ink-muted sm:text-right">
+              {/* Mobile has only two columns, so the description wraps onto its own row under the title. */}
+              <p className="col-start-2 text-sm leading-relaxed text-ink-muted sm:col-start-auto sm:text-right">
                 {facet.description}
               </p>
             </motion.div>
